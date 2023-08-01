@@ -1,0 +1,6 @@
+[submodule "ckan"]
+    path = ckan
+    url = git@github.com:ckan/ckan.git
+[submodule "ckanext-who-romania"]
+    path = ckanext-who-romania
+    url = git@github.com:fjelltopp/ckanext-who-romania.git
