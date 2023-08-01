@@ -1,4 +1,4 @@
-multibranchPipelineJob('CKAN-build') {
+multibranchPipelineJob('WHORomaniaCkan-build') {
     branchSources {
       branchSource {
         buildStrategies {
@@ -14,11 +14,11 @@ multibranchPipelineJob('CKAN-build') {
 
         source {
           github {
-              id('ckan_project_template')
+              id('who-romania-ckan')
               credentialsId('jenkins_github_api')
               repoOwner('Fjelltopp')
-              repository('ckan_project_template')
-              repositoryUrl("https://github.com/fjelltopp/ckan_project_template.git")
+              repository('who-romania-ckan')
+              repositoryUrl("https://github.com/fjelltopp/who-romania-ckan.git")
               configuredByUrl(true)
               traits {
                 gitHubTagDiscovery()
@@ -65,7 +65,7 @@ multibranchPipelineJob('CKAN-build') {
 }
 
 
-pipelineJob("CKAN-deploy") {
+pipelineJob("WHORomaniaCkan-deploy") {
   properties {
     disableConcurrentBuilds()
   }
@@ -79,7 +79,7 @@ pipelineJob("CKAN-deploy") {
       scm {
         git {
           remote {
-            url('git@github.com:fjelltopp/ckan_project_template.git')
+            url('git@github.com:fjelltopp/who-romania-ckan.git')
             credentials('jenkins_github_ssh')
             name('engine')
           }
@@ -88,7 +88,7 @@ pipelineJob("CKAN-deploy") {
             credentials('jenkins_github_ssh')
             name('origin')
           }
-          scriptPath('jenkinsfiles/ckan_deploy.groovy')
+          scriptPath('jenkinsfiles/wrc_deploy.groovy')
           branch("remotes/origin/master")
         }
       }

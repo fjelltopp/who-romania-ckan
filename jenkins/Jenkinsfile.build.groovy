@@ -9,7 +9,7 @@ def build_docker_image(name, tag) {
 
   script {
     def revision = "${tag}"
-    def repository = "https://${env.CKAN_ECR_REGISTRY}"
+    def repository = "https://${env.WRC_ECR_REGISTRY}"
     docker.withRegistry(repository) {
       def image = docker.build("${name}:${revision}", "-f Dockerfile --progress=plain .")
       image.push()
@@ -36,8 +36,8 @@ pipeline {
     }
     stage('Login to ECR'){
       steps{
-        withAWS(roleAccount:'074027416471', role:'Fjelltopp-cross-account-role') {
-          sh "aws ecr get-login-password --region eu-west-1 | docker login --username AWS --password-stdin ${env.CKAN_ECR_REGISTRY}"
+        withAWS(roleAccount:'494130958572', role:'Fjelltopp-cross-account-role') {
+          sh "aws ecr get-login-password --region eu-west-1 | docker login --username AWS --password-stdin ${env.WRC_ECR_REGISTRY}"
         }
       }
     }
