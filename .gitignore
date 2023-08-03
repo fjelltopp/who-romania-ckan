@@ -5,6 +5,7 @@
 .local
 .minikubevenv
 *.sublime-project
+*.sublime-workspace
 .bash_history
 .ipython
 .pdbhistory
