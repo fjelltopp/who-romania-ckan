@@ -1,0 +1,64 @@
+{
+  "users": [
+    {
+      "email": "fjelltopp_admin@fjelltopp.org",
+      "about": null,
+      "display_name": "Fjelltopp Admin",
+      "name": "fjelltopp_admin",
+      "password": "fjelltopp",
+      "activity_streams_email_notifications": false,
+      "state": "active",
+      "fullname": "Fjelltopp Admin"
+    },
+    {
+      "email": "fjelltopp_editor@fjelltopp.org",
+      "about": null,
+      "display_name": "Fjelltopp Editor",
+      "name": "fjelltopp_editor",
+      "password": "fjelltopp",
+      "activity_streams_email_notifications": false,
+      "state": "active",
+      "fullname": "Fjelltopp Editor"
+    },
+    {
+      "email": "fjelltopp_member@fjelltopp.org",
+      "about": null,
+      "display_name": "Fjelltopp Member",
+      "name": "fjelltopp_member",
+      "password": "fjelltopp",
+      "activity_streams_email_notifications": false,
+      "state": "active",
+      "fullname": "Fjelltopp Member"
+    },
+    {
+      "email": "test_admin@test.org",
+      "about": null,
+      "display_name": "Test Admin",
+      "name": "test_admin",
+      "password": "fjelltopp",
+      "activity_streams_email_notifications": false,
+      "state": "active",
+      "fullname": "Test Admin"
+    },
+    {
+      "email": "test_editor@test.org",
+      "about": null,
+      "display_name": "Test Editor",
+      "name": "test_editor",
+      "password": "fjelltopp",
+      "activity_streams_email_notifications": false,
+      "state": "active",
+      "fullname": "Test Editor"
+    },
+    {
+      "email": "test_member@test.org",
+      "about": null,
+      "display_name": "Test Member",
+      "name": "test_member",
+      "password": "fjelltopp",
+      "activity_streams_email_notifications": false,
+      "state": "active",
+      "fullname": "Test Member"
+    }
+  ]
+}

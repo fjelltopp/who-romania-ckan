@@ -1,0 +1,48 @@
+{
+  "organizations": [
+    {
+      "users": [
+        {
+          "name": "fjelltopp_admin",
+          "capacity": "admin"
+        },
+        {
+          "name": "fjelltopp_editor",
+          "capacity": "editor"
+        },
+        {
+          "name": "fjelltopp_member",
+          "capacity": "member"
+        }
+      ],
+      "display_name": "Fjelltopp",
+      "description": "Fjelltopp demo organization",
+      "image_url": "https://www.fjelltopp.org/templates/fjelltopp/images/navbar.png",
+      "name": "fjelltopp",
+      "state": "active",
+      "title": "Fjelltopp"
+    },
+    {
+      "users": [
+        {
+          "name": "test_admin",
+          "capacity": "admin"
+        },
+        {
+          "name": "test_editor",
+          "capacity": "editor"
+        },
+        {
+          "name": "test_member",
+          "capacity": "member"
+        }
+      ],
+      "display_name": "WHO Romania",
+      "description": "WHO Romania Country Office",
+      "image_url": "",
+      "name": "who-romania",
+      "state": "active",
+      "title": "WHO Romania Country Office"
+    }
+  ]
+}

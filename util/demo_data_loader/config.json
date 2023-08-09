@@ -1,0 +1,12 @@
+{
+  "config": {
+	  "data_path": "./inputs/demo_data",
+      "users_file": "users.json",
+	  "organizations_file": "organizations.json",
+	  "groups_file": "groups.json",
+	  "documents_file": "demo_data.csv",
+	  "ckan_url": "http://wrc.minikube",
+	  "ckan_api_key": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJTOG9fTEJCalhUU2wtbDI0aURBelpoMG04bXpaTXRSNVN0cmE3Ry13UDJBb1NabHFMOWRUTmVGV0x5b2hLaWVmLW10Q19seFZHbXFVcmxnNSIsImlhdCI6MTY4MzgwNTc2NX0.XQ-34lYAqiQoj83SfX371XwrjxC17e9ZABiiDjFl_tI",
+	  "resource_folder": "files"
+  }
+}

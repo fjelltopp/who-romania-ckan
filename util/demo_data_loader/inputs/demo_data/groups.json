@@ -1,0 +1,152 @@
+{
+  "groups": [
+    {
+      "users": [
+        {
+          "name": "test_admin",
+          "capacity": "admin"
+        },
+        {
+          "name": "test_editor",
+          "capacity": "editor"
+        },
+        {
+          "name": "test_member",
+          "capacity": "member"
+        }
+      ],
+      "display_name": "Publication",
+      "description": "Department publications and research studies",
+      "image_url": "https://dms.hiv.health.gov.mw/uploads/group/2022-03-17-123757.433896243660articlesquareicon.png",
+      "name": "publication",
+      "state": "active",
+      "title": "Publication"
+    }, {
+      "users": [
+        {
+          "name": "test_admin",
+          "capacity": "admin"
+        },
+        {
+          "name": "test_editor",
+          "capacity": "editor"
+        },
+        {
+          "name": "test_member",
+          "capacity": "member"
+        }
+      ],
+      "display_name": "Guideline",
+      "description": "Guidelines for health service staff",
+      "image_url": "https://dms.hiv.health.gov.mw/uploads/group/2022-03-17-123643.7336343533402businessmanagementplanprojectreporticon.png",
+      "name": "guideline",
+      "state": "active",
+      "title": "Guideline"
+    }, {
+      "users": [
+        {
+          "name": "test_admin",
+          "capacity": "admin"
+        },
+        {
+          "name": "test_editor",
+          "capacity": "editor"
+        },
+        {
+          "name": "test_member",
+          "capacity": "member"
+        }
+      ],
+      "display_name": "Circulars",
+      "description": "Department internal circulars and reports",
+      "image_url": "https://dms.hiv.health.gov.mw/uploads/group/2022-03-17-123603.1298852205240clusterdatagrouporganizeicon.png",
+      "name": "circular",
+      "state": "active",
+      "title": "Circulars"
+    }, {
+      "users": [
+        {
+          "name": "test_admin",
+          "capacity": "admin"
+        },
+        {
+          "name": "test_editor",
+          "capacity": "editor"
+        },
+        {
+          "name": "test_member",
+          "capacity": "member"
+        }
+      ],
+      "display_name": "Data",
+      "description": "Data group for demo purposes",
+      "image_url": "https://dms.hiv.health.gov.mw//uploads/group/2022-07-24-152420.906558circular.png",
+      "name": "data",
+      "state": "active",
+      "title": "Data"
+    }, {
+      "users": [
+        {
+          "name": "test_admin",
+          "capacity": "admin"
+        },
+        {
+          "name": "test_editor",
+          "capacity": "editor"
+        },
+        {
+          "name": "test_member",
+          "capacity": "member"
+        }
+      ],
+      "display_name": "Minutes",
+      "description": "Minutes group for demo purposes",
+      "image_url": "https://dms.hiv.health.gov.mw/uploads/group/2022-03-17-123701.0261814308050communicationconnectionmeetingofficeicon.png",
+      "name": "minutes",
+      "state": "active",
+      "title": "Minutes"
+    }, {
+      "users": [
+        {
+          "name": "test_admin",
+          "capacity": "admin"
+        },
+        {
+          "name": "test_editor",
+          "capacity": "editor"
+        },
+        {
+          "name": "test_member",
+          "capacity": "member"
+        }
+      ],
+      "display_name": "Monitoring Tool",
+      "description": "Monitoring tool group for demo purposes",
+      "image_url": "https://dms.hiv.health.gov.mw/uploads/group/2022-03-17-123717.467925211661eyeicon.png",
+      "name": "monitoring",
+      "state": "active",
+      "title": "Monitoring Tool"
+    }, {
+      "users": [
+        {
+          "name": "test_admin",
+          "capacity": "admin"
+        },
+        {
+          "name": "test_editor",
+          "capacity": "editor"
+        },
+        {
+          "name": "test_member",
+          "capacity": "member"
+        }
+      ],
+      "display_name": "Plan",
+      "description": "Plan group for demo purposes",
+      "image_url": "https://dms.hiv.health.gov.mw/uploads/group/2022-03-17-123743.3695114308313economicsmarketplanstrategicstrategyicon.png",
+      "name": "plan",
+      "state": "active",
+      "title": "Plan"
+    }
+  ]
+}
