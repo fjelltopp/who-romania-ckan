@@ -60,6 +60,8 @@ Routes = "==1.13"
 PasteDeploy = "==2.0.1"
 watchdog = "==2.1.5"
 zope = {interface = "==5.4.0"}
+ckanext-pdfview = {editable = true, ref="e4df796ceb440954d3927bdebe22a25d65e28216", git = "https://github.com/ckan/ckanext-pdfview.git"}
+ckanext-officedocs = {editable = true, ref="664f87a69509662b51f98aff53daaa232b8751d4", git = "https://github.com/jqnatividad/ckanext-officedocs.git"}
 ckanext-emailasusername = "==1.0.0"
 ckanext-sentry = {ref = "0.1.0", git = "https://github.com/fjelltopp/ckanext-sentry"}
 ckanext-authz-service = {editable = true, ref = "bd4c80f55a714c1117a0e130d07463e383c494c7", git = "https://github.com/datopian/ckanext-authz-service"}
