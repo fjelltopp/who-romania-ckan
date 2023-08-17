@@ -62,7 +62,6 @@ watchdog = "==2.1.5"
 zope = {interface = "==5.4.0"}
 ckanext-pdfview = {editable = true, ref="e4df796ceb440954d3927bdebe22a25d65e28216", git = "https://github.com/ckan/ckanext-pdfview.git"}
 ckanext-officedocs = {editable = true, ref="664f87a69509662b51f98aff53daaa232b8751d4", git = "https://github.com/jqnatividad/ckanext-officedocs.git"}
-ckanext-emailasusername = "==1.0.0"
 ckanext-sentry = {ref = "0.1.0", git = "https://github.com/fjelltopp/ckanext-sentry"}
 ckanext-authz-service = {editable = true, ref = "bd4c80f55a714c1117a0e130d07463e383c494c7", git = "https://github.com/datopian/ckanext-authz-service"}
 ckanext-blob-storage = {editable = true, ref = "5b2f59217e8f88a3f2cdb9dc50bf4099d9abe0de", git = "https://github.com/fjelltopp/ckanext-blob-storage"}
