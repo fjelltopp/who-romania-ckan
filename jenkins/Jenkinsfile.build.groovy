@@ -36,7 +36,6 @@ pipeline {
     }
     stage('Login to ECR'){
       steps{
-        sh "echo ${env.WRC_ECR_REGISTRY}"
         withAWS(roleAccount:'207626881191', role:'Fjelltopp-cross-account-role') {
           sh "aws ecr get-login-password --region eu-west-1 | docker login --username AWS --password-stdin ${env.WRC_ECR_REGISTRY}"
         }
