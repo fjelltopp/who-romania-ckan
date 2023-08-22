@@ -19,8 +19,8 @@ with open(CONFIG_PATH, 'r') as config_file:
     CONFIG = json.loads(config_file.read())['config']
 
 DATA_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), CONFIG['data_path'])
-USERS_FILE = os.path.join(DATA_PATH, 'users.json')
-ORGANIZATIONS_FILE = os.path.join(DATA_PATH, 'organizations.json')
+USERS_FILE = os.path.join(DATA_PATH, CONFIG['users_file'])
+ORGANIZATIONS_FILE = os.path.join(DATA_PATH, CONFIG['organizations_file'])
 DOCUMENTS_FILE = os.path.join(DATA_PATH, CONFIG['documents_file'])
 GROUPS_FILE = os.path.join(DATA_PATH, CONFIG['groups_file'])
 RESOURCE_FOLDER = os.path.join(DATA_PATH, CONFIG['resource_folder'])
@@ -108,6 +108,7 @@ def load_datasets(ckan, documents):
             log.info(f"Created dataset {dataset['name']}")
             continue
         except ckanapi.errors.ValidationError as e:
+            log.warning(e)
             pass  # fallback to dataset update
         try:
             log.warning(f"Dataset {dataset['name']} might already exists. Will try to update.")
@@ -297,7 +298,7 @@ def _load_documents():
                     'category': _create_name(row[6]),
                     'created': row[7],
                     'year': str(row[8]),
-                    'owner_org': 'dha',
+                    'owner_org': 'who-romania',
                     'program_area': row[5],
                     'tags': _create_tags(row[9]),
                     'dataset': row[10],
