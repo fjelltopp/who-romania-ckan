@@ -1,0 +1,21 @@
+{
+  "groups": [
+    {
+      "users": [],
+      "display_name": "Refugee Response",
+      "description": "Data and reporting concerning healthcare for refugees in Romania",
+      "image_url": "https://wrc.fjelltopp.org/uploads/group/2023-08-17-161633.0528592490868-200.png",
+      "name": "refugee-response",
+      "state": "active",
+      "title": "Refugee Response"
+    }, {
+      "users": [],
+      "display_name": "National Recovery & Resilience Plan",
+      "description": "Data and reporting concerning WHO's work towards the National Recovery and Resilience Plan.",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Stars_of_the_European_Union_%28bw%29.svg/1200px-Stars_of_the_European_Union_%28bw%29.svg.png",
+      "name": "nrrp",
+      "state": "active",
+      "title": "National Recovery & Resilience Plan"
+    }
+  ]
+}
