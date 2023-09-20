@@ -101,8 +101,18 @@ def load_datasets(ckan, documents):
                 'owner_org': document['owner_org'],
                 'tags': document['tags'],
                 'groups': [{'name': document['category']}],
-                'notes': document['dataset_notes']
+                'notes': document['dataset_notes'],
+                'type': document['dataset_type'],
+                'extras': []
             }
+
+            for item in document['dataset_metadata']:
+                if item['key'] == 'maintainer':
+                    dataset['maintainer'] = item['value']
+                elif item['key'] == 'maintainer_email':
+                    dataset['maintainer_email'] = item['value']
+                else:
+                    dataset['extras'].append(item)
 
             ckan.action.package_create(**dataset)
             log.info(f"Created dataset {dataset['name']}")
@@ -137,6 +147,9 @@ def load_resources(ckan, documents):
             'url': 'upload',
             'package_id': document['dataset_name']
         }
+
+        for item in document['resource_metadata']:
+            resource_dict[item['key']] = item['value']
 
         file_id = os.path.splitext(document['file'])[0]
         file_ext = os.path.splitext(document['file'])[1]
@@ -303,7 +316,11 @@ def _load_documents():
                     'tags': _create_tags(row[9]),
                     'dataset': row[10],
                     'dataset_name': _create_name(row[10]),
-                    'dataset_notes': row[11]
+                    'dataset_type': row[11],
+                    'dataset_metadata': _create_metadata(row[12]),
+                    'resource_metadata': _create_metadata(row[12], 'resource'),
+                    'dataset_notes': row[13],
+
                 }
                 if len(row[9]) > 0:
                     document['tags'] = []
@@ -316,6 +333,25 @@ def _load_documents():
             if row[1] == 'logi_id':
                 start_table = True
         return documents
+
+
+def _create_metadata(metadata_str, owner_obj_type='dataset'):
+    if not metadata_str.strip():
+        return []
+    metadata = metadata_str.split(',')
+    metadata_list = []
+    for data in metadata:
+        if ':' not in data or len(data.split(':')) != 2:
+            continue
+        if owner_obj_type == 'dataset':
+            if 'resource_' in data:
+                continue
+            metadata_list.append({"key": data.split(':')[0], "value": data.split(':')[1]})
+        elif owner_obj_type == 'resource':
+            if 'resource_' not in data:
+                continue
+            metadata_list.append({"key": data.split(':')[0].replace('resource_', '') , "value": data.split(':')[1]})
+    return metadata_list
 
 
 if __name__ == '__main__':

@@ -21,7 +21,29 @@
       "name": "refugee-response",
       "state": "active",
       "title": "Refugee Response"
-    }, {
+    },
+    {
+      "users": [
+        {
+          "name": "test_admin",
+          "capacity": "admin"
+        },
+        {
+          "name": "test_editor",
+          "capacity": "editor"
+        },
+        {
+          "name": "test_member",
+          "capacity": "member"
+        }
+      ],
+      "display_name": "Family Medicine",
+      "description": "Reporting data for family medicine",
+      "image_url": "https://wrc.fjelltopp.org/uploads/group/2023-08-17-161633.0528592490868-200.png",
+      "name": "family-medicine",
+      "state": "active",
+      "title": "Family Medicine"
+    },{
       "users": [
         {
           "name": "test_admin",
