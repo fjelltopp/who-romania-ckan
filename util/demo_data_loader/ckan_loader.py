@@ -109,8 +109,6 @@ def load_datasets(ckan, documents):
             for item in document['dataset_metadata']:
                 if item['key'] == 'maintainer':
                     dataset['maintainer'] = item['value']
-                elif item['key'] == 'maintainer_email':
-                    dataset['maintainer_email'] = item['value']
                 else:
                     dataset['extras'].append(item)
 
