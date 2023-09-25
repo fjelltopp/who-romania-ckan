@@ -63,6 +63,12 @@ def mutable_resource_dict(name, file_path, week, family_doctor):
 
 
 def traverse_folder_tree():
+    """
+    Traverses a folder tree and returns a list of all file paths in the tree.
+    
+    Returns:
+        dict: A list of all file paths in the folder tree.
+    """
     subfolders = [int(dir_name) for dir_name in os.listdir(CONFIG['data_folder'])]
     subfolders.sort(reverse=True)
     files = []
@@ -81,6 +87,10 @@ def traverse_folder_tree():
 
 
 def read_resource_sheet(workbook, sheet):
+    """
+    Reads data from an Excel sheet, creates a new folder, copies a template Excel file to the new folder,
+    populates the template with data from the sheet, and returns a dictionary containing information about the new resource.
+    """    
     active = workbook[sheet]
     report_date = active['B2'].value
     fd_name = sheet.split('FD ')[1]
