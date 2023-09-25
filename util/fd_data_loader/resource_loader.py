@@ -86,7 +86,7 @@ def traverse_folder_tree():
     return files
 
 
-def read_resource_sheet(workbook, sheet):
+def read_resource_sheet(filename, workbook, sheet):
     """
     Reads data from an Excel sheet, creates a new folder, copies a template Excel file to the new folder,
     populates the template with data from the sheet, and returns a dictionary containing information about the new resource.
@@ -98,12 +98,16 @@ def read_resource_sheet(workbook, sheet):
     if not isinstance(report_date, datetime):
         log.warning(f"Report date {report_date} is not a date.")
         print("Failed to use report date, attempting to load from report period ...")
+        with open(root_dir + '/logs/report_date_error.csv', 'a') as file:
+            file.write(f"{filename},{sheet},{report_date}\n")
         report_date = active['B3'].value
         if not isinstance(report_date, datetime):
             log.error(f"Report date {report_date} is not a date.")
 
     if report_date.weekday() != 4:
         log.warning(f"Report date {report_date} is not a Friday.")
+        with open(root_dir + '/logs/not_friday_error.csv', 'a') as file:
+            file.write(f"{filename},{sheet},{report_date}\n")
 
     year = str(report_date.year % 100)
     month = "{:02}".format(report_date.month)
@@ -143,7 +147,7 @@ def load_file_sheets(file):
     sheets.sort()
     all_resources = []
     for sheet in sheets:
-        all_resources.append(read_resource_sheet(workbook, sheet))
+        all_resources.append(read_resource_sheet(file, workbook, sheet))
     return all_resources
 
 
@@ -210,9 +214,19 @@ def load_datasets(ckan):
                     log.error(f"Can't create resource {resource['name']}: {e.error_dict}")
 
 
+def init_log_files():
+    with open(root_dir + '/logs/report_date_error.csv', 'w') as file:
+        file.write(f"file,sheet,report_date\n")
+    with open(root_dir + '/logs/not_friday_error.csv', 'w') as file:
+        file.write(f"file,sheet,report_date\n")
+
+
 if __name__ == '__main__':
     ckan = ckanapi.RemoteCKAN(CONFIG['ckan_url'], apikey=CONFIG['ckan_api_key'])
+    init_log_files()
+    generate_dataset_dict()
     if not os.path.exists(root_dir + '/resources/datasets.json'):
-        generate_dataset_dict()
+        log.error("Failed to generate datasets.json")
+        exit(1)
     load_datasets(ckan)
 
