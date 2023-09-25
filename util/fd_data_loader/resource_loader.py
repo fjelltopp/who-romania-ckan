@@ -1,3 +1,4 @@
+import csv
 import json
 import logging
 import os
@@ -78,7 +79,7 @@ def traverse_folder_tree():
             month = (str(subfolder).split('23')[1])
             folders_dict = {"year": year, "month": month, "files": []}
             for file in filenames:
-                if "month" in file.lower(): # skip monthly files
+                if "month" in file.lower():  # skip monthly files
                     continue
                 if os.path.splitext(file)[1] in ['.xls', '.xlsx']:
                     folders_dict["files"].append(os.path.join(dirpath, file))
@@ -90,7 +91,7 @@ def read_resource_sheet(filename, workbook, sheet):
     """
     Reads data from an Excel sheet, creates a new folder, copies a template Excel file to the new folder,
     populates the template with data from the sheet, and returns a dictionary containing information about the new resource.
-    """    
+    """
     active = workbook[sheet]
     report_date = active['B2'].value
     fd_name = sheet.split('FD ')[1]
@@ -166,7 +167,8 @@ def generate_dataset_dict():
             name="family-medicine-reports" + "-" + (file_dict["month"]) + "-" + (file_dict["year"]),
             month=file_dict["year"] + "-" + file_dict["month"],
             year=file_dict["year"],
-            notes="WHO ROMANIA - Family Medicine Reports for " + MONTHS[int(file_dict["month"])] + " " + file_dict["year"],
+            notes="WHO ROMANIA - Family Medicine Reports for " + MONTHS[int(file_dict["month"])] + " " + file_dict[
+                "year"],
             resources=resources
         ))
 
@@ -200,7 +202,8 @@ def load_datasets(ckan):
             for resource in resources:
                 # get the month from the resource week
                 month = resource['week'].split('-')[1]
-                file_path = os.path.join(RESOURCE_FOLDER, month, resource["week"], "FD " + resource["family_doctor"], resource['filename'])
+                file_path = os.path.join(RESOURCE_FOLDER, month, resource["week"], "FD " + resource["family_doctor"],
+                                         resource['filename'])
                 resource['package_id'] = dataset['id']
                 try:
                     with open(file_path, 'rb') as res_file:
@@ -221,12 +224,38 @@ def init_log_files():
         file.write(f"file,sheet,report_date,weekday\n")
 
 
+def swap_report_dates_and_periods_cell():
+    filename = root_dir + "/logs/report_date_error.csv"
+
+    if not os.path.exists(filename):
+        raise Exception("File not found")
+
+    with open(filename, 'r') as file:
+        csv_reader = csv.reader(file)
+        # Check number of rows
+        if len(list(csv_reader)) <= 1:
+            log.info("No report date errors found")
+            return
+        next(csv_reader)
+        for row in csv_reader:
+            current_file = row[0]
+            # Loading the XLSX file
+            workbook = load_workbook(os.path.join(root_dir, current_file))
+            sheet = workbook[row[1]]
+            report_date = sheet['B2'].value
+            report_period = sheet['B3'].value
+            sheet['B2'] = report_period
+            sheet['B3'] = report_date
+            workbook.save(current_file)
+            log.info(f"Swapped report date and period for file {current_file} and sheet {row[1]}")
+
+
 if __name__ == '__main__':
     ckan = ckanapi.RemoteCKAN(CONFIG['ckan_url'], apikey=CONFIG['ckan_api_key'])
+    swap_report_dates_and_periods_cell()
     init_log_files()
     generate_dataset_dict()
     if not os.path.exists(root_dir + '/resources/datasets.json'):
         log.error("Failed to generate datasets.json")
         exit(1)
-    load_datasets(ckan)
-
+    # load_datasets(ckan)

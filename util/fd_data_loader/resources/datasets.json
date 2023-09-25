@@ -25,49 +25,49 @@
                     "name": "Report from Family Doctor BETCU for week number 28",
                     "filename": "report.xlsx",
                     "format": "XLSX",
-                    "week": "23-07-15",
+                    "week": "23-07-14",
                     "family_doctor": "BETCU"
                 },
                 {
                     "name": "Report from Family Doctor CAMENCEAN for week number 28",
                     "filename": "report.xlsx",
                     "format": "XLSX",
-                    "week": "23-07-15",
+                    "week": "23-07-14",
                     "family_doctor": "CAMENCEAN"
                 },
                 {
                     "name": "Report from Family Doctor CRISTIAN for week number 28",
                     "filename": "report.xlsx",
                     "format": "XLSX",
-                    "week": "23-07-15",
+                    "week": "23-07-14",
                     "family_doctor": "CRISTIAN"
                 },
                 {
                     "name": "Report from Family Doctor DUMITRESCU for week number 28",
                     "filename": "report.xlsx",
                     "format": "XLSX",
-                    "week": "23-07-15",
+                    "week": "23-07-14",
                     "family_doctor": "DUMITRESCU"
                 },
                 {
                     "name": "Report from Family Doctor LACATUS for week number 28",
                     "filename": "report.xlsx",
                     "format": "XLSX",
-                    "week": "23-07-15",
+                    "week": "23-07-14",
                     "family_doctor": "LACATUS"
                 },
                 {
                     "name": "Report from Family Doctor NECULAU for week number 28",
                     "filename": "report.xlsx",
                     "format": "XLSX",
-                    "week": "23-07-15",
+                    "week": "23-07-14",
                     "family_doctor": "NECULAU"
                 },
                 {
                     "name": "Report from Family Doctor SERBAN for week number 28",
                     "filename": "report.xlsx",
                     "format": "XLSX",
-                    "week": "23-07-15",
+                    "week": "23-07-14",
                     "family_doctor": "SERBAN"
                 },
                 {
@@ -113,10 +113,10 @@
                     "family_doctor": "NECULAU"
                 },
                 {
-                    "name": "Report from Family Doctor SERBAN for week number 31",
+                    "name": "Report from Family Doctor SERBAN for week number 30",
                     "filename": "report.xlsx",
                     "format": "XLSX",
-                    "week": "23-07-31",
+                    "week": "23-07-28",
                     "family_doctor": "SERBAN"
                 },
                 {
@@ -197,10 +197,10 @@
                     "family_doctor": "DUMITRESCU"
                 },
                 {
-                    "name": "Report from Family Doctor LACATUS for week number 28",
+                    "name": "Report from Family Doctor LACATUS for week number 29",
                     "filename": "report.xlsx",
                     "format": "XLSX",
-                    "week": "23-07-15",
+                    "week": "23-07-21",
                     "family_doctor": "LACATUS"
                 },
                 {
