@@ -6,6 +6,9 @@ from datetime import datetime
 import ckanapi
 from openpyxl.reader.excel import load_workbook
 
+log = logging.getLogger(__name__)
+log.setLevel(logging.INFO)
+
 CONFIG_FILENAME = os.getenv('CONFIG_FILENAME', 'config.json')
 CONFIG_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), CONFIG_FILENAME)
 root_dir = os.path.dirname(os.path.abspath(__file__))
@@ -14,6 +17,7 @@ with open(CONFIG_PATH, 'r') as config_file:
     CONFIG = json.loads(config_file.read())['config']
 
 RESOURCE_FOLDER = os.path.join(os.path.dirname(os.path.abspath(__file__)), CONFIG['resources_folders'])
+DATASETS_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), CONFIG['datasets_file'])
 
 MONTHS = {
     1: "January",
@@ -84,14 +88,14 @@ def read_resource_sheet(workbook, sheet):
     fd_name = sheet.split('FD ')[1]
 
     if not isinstance(report_date, datetime):
-        logging.warning(f"Report date {report_date} is not a date.")
+        log.warning(f"Report date {report_date} is not a date.")
         print("Failed to use report date, attempting to load from report period ...")
         report_date = active['B3'].value
         if not isinstance(report_date, datetime):
-            logging.error(f"Report date {report_date} is not a date.")
+            log.error(f"Report date {report_date} is not a date.")
 
     if report_date.weekday() != 4:
-        logging.info(f"Report date {report_date} is not a Friday.")
+        log.warning(f"Report date {report_date} is not a Friday.")
 
     year = str(report_date.year % 100)
     month = "{:02}".format(report_date.month)
@@ -155,6 +159,46 @@ def generate_dataset_dict():
 
     with open(root_dir + '/resources/datasets.json', 'w') as json_file:
         json.dump(dataset_dict, json_file, indent=4)
+
+
+def load_datasets(ckan):
+    """
+    Helper method to load datasets from the DATASETS_FILE config file
+    :param ckan: ckanapi instance
+    :return: None
+    """
+    with open(DATASETS_FILE, 'r') as datasets_file:
+        datasets = json.load(datasets_file)['datasets']
+        for dataset in datasets:
+            resources = dataset.pop('resources', [])
+            dataset['resources'] = []
+            try:
+                dataset = ckan.action.package_create(**dataset)
+                log.info(f"Created dataset {dataset['name']}")
+            except ckanapi.errors.ValidationError:
+                try:
+                    log.warning(f"Dataset {dataset['name']} might exist. Will try to update.")
+                    id = ckan.action.package_show(id=dataset['name'])['id']
+                    dataset = ckan.action.package_update(id=id, **dataset)
+                    log.info(f"Updated dataset {dataset['name']}")
+                except ckanapi.errors.ValidationError as e:
+                    log.error(f"Can't create dataset {dataset['name']}: {e.error_dict}")
+                    continue
+            for resource in resources:
+                # get the month from the resource week
+                month = resource['week'].split('-')[1]
+                file_path = os.path.join(RESOURCE_FOLDER, month, resource["week"], resource['filename'])
+                resource['package_id'] = dataset['id']
+                try:
+                    with open(file_path, 'rb') as res_file:
+                        resource = ckan.call_action(
+                            'resource_create',
+                            resource,
+                            files={'upload': res_file}
+                        )
+                    log.info(f"Created resource {resource['name']}")
+                except ckanapi.errors.ValidationError as e:
+                    log.error(f"Can't create resource {resource['name']}: {e.error_dict}")
 
 
 if __name__ == '__main__':
