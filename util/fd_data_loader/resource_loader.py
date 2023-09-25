@@ -10,14 +10,14 @@ log = logging.getLogger(__name__)
 log.setLevel(logging.INFO)
 
 CONFIG_FILENAME = os.getenv('CONFIG_FILENAME', 'config.json')
-CONFIG_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), CONFIG_FILENAME)
 root_dir = os.path.dirname(os.path.abspath(__file__))
+CONFIG_PATH = os.path.join(root_dir, CONFIG_FILENAME)
 
 with open(CONFIG_PATH, 'r') as config_file:
     CONFIG = json.loads(config_file.read())['config']
 
-RESOURCE_FOLDER = os.path.join(os.path.dirname(os.path.abspath(__file__)), CONFIG['resources_folders'])
-DATASETS_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), CONFIG['datasets_file'])
+RESOURCE_FOLDER = os.path.join(root_dir, CONFIG['resources_folders'])
+DATASETS_FILE = root_dir + CONFIG['datasets_file']
 
 MONTHS = {
     1: "January",
@@ -105,7 +105,7 @@ def read_resource_sheet(workbook, sheet):
 
     new_folder_path = os.path.join(root_dir, "resources/family-medicine-reports", month, week, sheet)
 
-    template_workbook = load_workbook(root_dir + "/template.xlsx")
+    template_workbook = load_workbook(os.path.join(root_dir, CONFIG['template_file']))
     template_sheet = template_workbook.active
 
     start_row, end_row = 6, 41
@@ -187,7 +187,7 @@ def load_datasets(ckan):
             for resource in resources:
                 # get the month from the resource week
                 month = resource['week'].split('-')[1]
-                file_path = os.path.join(RESOURCE_FOLDER, month, resource["week"], resource['filename'])
+                file_path = os.path.join(RESOURCE_FOLDER, month, resource["week"], "FD " + resource["family_doctor"], resource['filename'])
                 resource['package_id'] = dataset['id']
                 try:
                     with open(file_path, 'rb') as res_file:
@@ -202,8 +202,7 @@ def load_datasets(ckan):
 
 
 if __name__ == '__main__':
-    generate_dataset_dict()
-    # TODO sort files by week number
-    # TODO create dataset for each month
-    # TODO create resource for each week
-    # TODO create resource for each family doctor
+    ckan = ckanapi.RemoteCKAN(CONFIG['ckan_url'], apikey=CONFIG['ckan_api_key'])
+    # generate_dataset_dict()
+    if os.path.exists(root_dir + '/resources/datasets.json'):
+        load_datasets(ckan)
