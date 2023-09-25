@@ -16,6 +16,14 @@
       "name": "nrrp",
       "state": "active",
       "title": "National Recovery & Resilience Plan"
+    }, {
+      "users": [],
+      "display_name": "Family Medicine",
+      "description": "Data and reporting concerning WHO's work with family doctors in Romania.",
+      "image_url": "https://dms.hiv.health.gov.mw/uploads/group/2022-03-17-123701.0261814308050communicationconnectionmeetingofficeicon.png",
+      "name": "family-medicine",
+      "state": "active",
+      "title": "Family Medicine"
     }
   ]
 }

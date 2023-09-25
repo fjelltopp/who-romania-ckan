@@ -8,30 +8,6 @@
       "name": "who-romania",
       "state": "active",
       "title": "WHO Romania Country Office"
-    }, {
-      "users": [],
-      "display_name": "Fjelltopp",
-      "description": "Fjelltopp are a private sector partner of WHO Romania who want to exchange data with the country office.",
-      "image_url": "https://scontent.fman4-2.fna.fbcdn.net/v/t39.30808-6/326922690_597810302175610_3061647189804678993_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=1A7XqDqztAcAX_S9CZF&_nc_ht=scontent.fman4-2.fna&oh=00_AfDfT7Xsy71o1pmTrOpYI_5buLArdJK6avE7YVagyZEJSQ&oe=64EA518F",
-      "name": "fjelltopp",
-      "state": "active",
-      "title": "Fjelltopp"
-    }, {
-      "users": [],
-      "display_name": "WHO Europe",
-      "description": "Members of WHO Europe could have a seperate space within the platform if they produce datasets to be exchanged with WHO Romania.",
-      "image_url": "https://www.edf-feph.org/content/uploads/2020/11/who-europe-250.png",
-      "name": "who-europe",
-      "state": "active",
-      "title": "WHO Europe Regional Office"
-    },{
-      "users": [],
-      "display_name": "National Health Insurance House",
-      "description": "The National Health Insurance house partner with WHO Country Office and privately share with the country office regular updated data sets drawn from their systems.",
-      "image_url": "https://scontent.fman4-1.fna.fbcdn.net/v/t39.30808-6/219650412_936197076960849_3522626635798757483_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=DZ5JjcV9nt0AX_qWtPC&_nc_ht=scontent.fman4-1.fna&oh=00_AfC0i0SYt_8hh98DlxFryK0bchHD1ehMb5HbsCBesB5jew&oe=64EA0BB3",
-      "name": "cnas",
-      "state": "active",
-      "title": "National Health Insurance House"
     }
   ]
 }
