@@ -113,6 +113,7 @@ def read_resource_sheet(workbook, sheet):
 
     new_folder_path = os.path.join(root_dir, "resources/family-medicine-reports", month, week, sheet)
 
+    # Loading the template file
     template_workbook = load_workbook(os.path.join(root_dir, CONFIG['template_file']))
     template_sheet = template_workbook.active
 
