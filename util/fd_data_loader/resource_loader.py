@@ -201,6 +201,7 @@ def load_datasets(ckan):
 
 if __name__ == '__main__':
     ckan = ckanapi.RemoteCKAN(CONFIG['ckan_url'], apikey=CONFIG['ckan_api_key'])
-    # generate_dataset_dict()
-    if os.path.exists(root_dir + '/resources/datasets.json'):
-        load_datasets(ckan)
+    if not os.path.exists(root_dir + '/resources/datasets.json'):
+        generate_dataset_dict()
+    load_datasets(ckan)
+
