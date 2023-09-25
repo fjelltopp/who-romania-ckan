@@ -40,6 +40,22 @@
             "name": "Test CSV Data"
         }]
     }, {
+        "name": "family-medicine-template",
+        "title": "Family Medicine Reporting Template",
+        "type": "dataset",
+        "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In consequat sollicitudin fringilla. Sed ut sodales dui. Sed maximus nec metus vitae tincidunt. Phasellus finibus urna velit. Donec mi urna, pulvinar sit amet ante a, pharetra elementum elit. Nam euismod semper viverra. Morbi a ipsum lorem. Fusce sodales neque nec egestas gravida. Sed dictum risus non turpis mattis, dictum condimentum massa blandit. Quisque in tincidunt velit.",
+        "owner_org": "who-romania",
+        "private": false,
+        "program_area": "Family Medicine",
+        "year": "2023",
+        "groups": [{"name": "family-medicine"}],
+        "tags": [{"name": "Template"}],
+        "resources": [{
+            "filename": "6.xlsx",
+            "format": "XLSX",
+            "name": "Family Medicine Reporting Excel Template"
+        }]
+    }, {
         "title": "Family Medicine Data",
         "name": "family-medicine-demo",
         "type": "family-medicine",
