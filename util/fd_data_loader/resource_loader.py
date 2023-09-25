@@ -68,9 +68,7 @@ def traverse_folder_tree():
     files = []
     for subfolder in subfolders:
         for dirpath, dirnames, filenames in os.walk(CONFIG['data_folder'] + '/' + str(subfolder)):
-            # TODO edit folders names with full year
             year = '20' + (str(subfolder)[:2])
-            # TODO fix this
             month = (str(subfolder).split('23')[1])
             folders_dict = {"year": year, "month": month, "files": []}
             for file in filenames:
