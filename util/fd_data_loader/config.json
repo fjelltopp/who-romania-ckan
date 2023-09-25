@@ -6,6 +6,7 @@
 	  "resources_folders": "./resources/family-medicine-reports",
 	  "datasets_file": "/resources/datasets.json",
 	  "template_file": "./resources/wrc-template-2.xlsx",
-	  "swap_report_dates_and_periods": false
+	  "swap_report_dates_and_periods": false,
+	  "overwrite_logs": false
   }
 }

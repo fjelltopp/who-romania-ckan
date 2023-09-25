@@ -218,10 +218,11 @@ def load_datasets(ckan):
 
 
 def init_log_files():
-    with open(root_dir + '/logs/report_date_error.csv', 'w') as file:
-        file.write(f"file,sheet,report_date\n")
-    with open(root_dir + '/logs/not_friday_error.csv', 'w') as file:
-        file.write(f"file,sheet,report_date,weekday\n")
+    if CONFIG["overwrite_logs"]:
+        with open(root_dir + '/logs/report_date_error.csv', 'w') as file:
+            file.write(f"file,sheet,report_date\n")
+        with open(root_dir + '/logs/not_friday_error.csv', 'w') as file:
+            file.write(f"file,sheet,report_date,weekday\n")
 
 
 def swap_report_dates_and_periods_cell():
