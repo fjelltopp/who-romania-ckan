@@ -253,7 +253,9 @@ def swap_report_dates_and_periods_cell():
 
 if __name__ == '__main__':
     ckan = ckanapi.RemoteCKAN(CONFIG['ckan_url'], apikey=CONFIG['ckan_api_key'])
+    # The swap will happen if CONFIG['swap_report_dates_and_periods'] is True
     swap_report_dates_and_periods_cell()
+    # The logs will be overwritten if CONFIG['overwrite_logs'] is True
     init_log_files()
     generate_dataset_dict()
     if not os.path.exists(root_dir + '/resources/datasets.json'):
