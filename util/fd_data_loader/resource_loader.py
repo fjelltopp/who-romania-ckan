@@ -14,7 +14,7 @@ with open(CONFIG_PATH, 'r') as config_file:
     CONFIG = json.loads(config_file.read())['config']
 
 MONTHS = {
-    1: "Januart",
+    1: "January",
     2: "February",
     3: "March",
     4: "April",
@@ -97,7 +97,7 @@ def read_resource_sheet(workbook, sheet):
     week = year + '-' + month + '-' + day
     week_number = str(report_date.isocalendar()[1])
 
-    new_folder_path = os.path.join(root_dir, "resources/family-medicine-reports", month, week_number, sheet)
+    new_folder_path = os.path.join(root_dir, "resources/family-medicine-reports", month, week, sheet)
 
     template_workbook = load_workbook(root_dir + "/template.xlsx")
     template_sheet = template_workbook.active
