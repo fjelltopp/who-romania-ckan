@@ -258,4 +258,4 @@ if __name__ == '__main__':
     if not os.path.exists(root_dir + '/resources/datasets.json'):
         log.error("Failed to generate datasets.json")
         exit(1)
-    # load_datasets(ckan)
+    load_datasets(ckan)
