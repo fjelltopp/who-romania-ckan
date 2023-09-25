@@ -1,0 +1,239 @@
+{
+    "datasets": [{
+        "name": "test-report",
+        "title": "Test report",
+        "type": "dataset",
+        "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In consequat sollicitudin fringilla. Sed ut sodales dui. Sed maximus nec metus vitae tincidunt. Phasellus finibus urna velit. Donec mi urna, pulvinar sit amet ante a, pharetra elementum elit. Nam euismod semper viverra. Morbi a ipsum lorem. Fusce sodales neque nec egestas gravida. Sed dictum risus non turpis mattis, dictum condimentum massa blandit. Quisque in tincidunt velit.",
+        "owner_org": "who-romania",
+        "private": false,
+        "program_area": "Sexual and Reproductive Health",
+        "year": "2022",
+        "groups": [{"name": "nrrp"}],
+        "tags": [{"name": "Report"}],
+        "resources": [{
+            "filename": "1.docx",
+            "format": "DOCX",
+            "name": "Test MS Word Document"
+        }, {
+            "filename": "2.pdf",
+            "format": "PDF",
+            "name": "Test PDF Document"
+        }]
+    }, {
+        "name": "test-data",
+        "title": "Test data",
+        "type": "dataset",
+        "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In consequat sollicitudin fringilla. Sed ut sodales dui. Sed maximus nec metus vitae tincidunt. Phasellus finibus urna velit. Donec mi urna, pulvinar sit amet ante a, pharetra elementum elit. Nam euismod semper viverra. Morbi a ipsum lorem. Fusce sodales neque nec egestas gravida. Sed dictum risus non turpis mattis, dictum condimentum massa blandit. Quisque in tincidunt velit.",
+        "owner_org": "who-romania",
+        "private": false,
+        "program_area": "Mental Health and Psychosocial Support",
+        "year": "2023",
+        "groups": [{"name": "refugee-response"}],
+        "tags": [{"name": "Data"}],
+        "resources": [{
+            "filename": "3.xlsx",
+            "format": "XLSX",
+            "name": "Test XLSX Data"
+        }, {
+            "filename": "4.csv",
+            "format": "CSV",
+            "name": "Test CSV Data"
+        }]
+    }, {
+        "name": "family-medicine-template",
+        "title": "Family Medicine Reporting Template",
+        "type": "dataset",
+        "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In consequat sollicitudin fringilla. Sed ut sodales dui. Sed maximus nec metus vitae tincidunt. Phasellus finibus urna velit. Donec mi urna, pulvinar sit amet ante a, pharetra elementum elit. Nam euismod semper viverra. Morbi a ipsum lorem. Fusce sodales neque nec egestas gravida. Sed dictum risus non turpis mattis, dictum condimentum massa blandit. Quisque in tincidunt velit.",
+        "owner_org": "who-romania",
+        "private": false,
+        "program_area": "E-Health",
+        "year": "2023",
+        "groups": [{"name": "family-medicine"}],
+        "tags": [{"name": "Template"}],
+        "resources": [{
+            "filename": "6.xlsx",
+            "format": "XLSX",
+            "name": "Family Medicine Reporting Excel Template"
+        }]
+    }, {
+        "title": "Family Medicine Data",
+        "name": "family-medicine-demo",
+        "type": "family-medicine",
+        "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In consequat sollicitudin fringilla. Sed ut sodales dui. Sed maximus nec metus vitae tincidunt. Phasellus finibus urna velit. Donec mi urna, pulvinar sit amet ante a, pharetra elementum elit. Nam euismod semper viverra. Morbi a ipsum lorem. Fusce sodales neque nec egestas gravida. Sed dictum risus non turpis mattis, dictum condimentum massa blandit. Quisque in tincidunt velit.",
+        "owner_org": "who-romania",
+        "maintainer": "Admin",
+        "maintainer_email": "admin@localhost",
+        "month": "2023-05",
+        "groups": [{"name": "family-medicine"}],
+        "tags": [{"name": "Data"}],
+        "resources": [{
+            "name": "BETCU 1",
+            "filename": "5.xlsx",
+            "format": "XLSX",
+            "week": "23-05-05",
+            "family_doctor": "BETCU"
+        }, {
+            "name": "BETCU 2",
+            "filename": "5.xlsx",
+            "format": "XLSX",
+            "week": "23-05-12",
+            "family_doctor": "BETCU"
+        }, {
+            "name": "BETCU 3",
+            "filename": "5.xlsx",
+            "format": "XLSX",
+            "week": "23-05-19",
+            "family_doctor": "BETCU"
+        }, {
+            "name": "BETCU 4",
+            "filename": "5.xlsx",
+            "format": "XLSX",
+            "week": "23-05-26",
+            "family_doctor": "BETCU"
+        }, {
+            "name": "SERBAN 1",
+            "filename": "5.xlsx",
+            "format": "XLSX",
+            "week": "23-05-05",
+            "family_doctor": "SERBAN"
+        }, {
+            "name": "SERBAN 2",
+            "filename": "5.xlsx",
+            "format": "XLSX",
+            "week": "23-05-12",
+            "family_doctor": "SERBAN"
+        }, {
+            "name": "SERBAN 3",
+            "filename": "5.xlsx",
+            "format": "XLSX",
+            "week": "23-05-19",
+            "family_doctor": "SERBAN"
+        }, {
+            "name": "SERBAN 4",
+            "filename": "5.xlsx",
+            "format": "XLSX",
+            "week": "23-05-26",
+            "family_doctor": "SERBAN"
+        }, {
+            "name": "NECULAU 1",
+            "filename": "5.xlsx",
+            "format": "XLSX",
+            "week": "23-05-05",
+            "family_doctor": "NECULAU"
+        }, {
+            "name": "NECULAU 2",
+            "filename": "5.xlsx",
+            "format": "XLSX",
+            "week": "23-05-12",
+            "family_doctor": "NECULAU"
+        }, {
+            "name": "NECULAU 3",
+            "filename": "5.xlsx",
+            "format": "XLSX",
+            "week": "23-05-19",
+            "family_doctor": "NECULAU"
+        }, {
+            "name": "NECULAU 4",
+            "filename": "5.xlsx",
+            "format": "XLSX",
+            "week": "23-05-26",
+            "family_doctor": "NECULAU"
+        }, {
+            "name": "DUMITRESCU 1",
+            "filename": "5.xlsx",
+            "format": "XLSX",
+            "week": "23-05-05",
+            "family_doctor": "DUMITRESCU"
+        }, {
+            "name": "DUMITRESCU 2",
+            "filename": "5.xlsx",
+            "format": "XLSX",
+            "week": "23-05-12",
+            "family_doctor": "DUMITRESCU"
+        }, {
+            "name": "DUMITRESCU 3",
+            "filename": "5.xlsx",
+            "format": "XLSX",
+            "week": "23-05-19",
+            "family_doctor": "DUMITRESCU"
+        }, {
+            "name": "DUMITRESCU 4",
+            "filename": "5.xlsx",
+            "format": "XLSX",
+            "week": "23-05-26",
+            "family_doctor": "DUMITRESCU"
+        }, {
+            "name": "LACATUS 1",
+            "filename": "5.xlsx",
+            "format": "XLSX",
+            "week": "23-05-05",
+            "family_doctor": "LACATUS"
+        }, {
+            "name": "LACATUS 2",
+            "filename": "5.xlsx",
+            "format": "XLSX",
+            "week": "23-05-12",
+            "family_doctor": "LACATUS"
+        }, {
+            "name": "LACATUS 3",
+            "filename": "5.xlsx",
+            "format": "XLSX",
+            "week": "23-05-19",
+            "family_doctor": "LACATUS"
+        }, {
+            "name": "LACATUS 4",
+            "filename": "5.xlsx",
+            "format": "XLSX",
+            "week": "23-05-26",
+            "family_doctor": "LACATUS"
+        }, {
+            "name": "CAMENCEAN 1",
+            "filename": "5.xlsx",
+            "format": "XLSX",
+            "week": "23-05-05",
+            "family_doctor": "CAMENCEAN"
+        }, {
+            "name": "CAMENCEAN 2",
+            "filename": "5.xlsx",
+            "format": "XLSX",
+            "week": "23-05-12",
+            "family_doctor": "CAMENCEAN"
+        }, {
+            "name": "CAMENCEAN 3",
+            "filename": "5.xlsx",
+            "format": "XLSX",
+            "week": "23-05-19",
+            "family_doctor": "CAMENCEAN"
+        }, {
+            "name": "CAMENCEAN 4",
+            "filename": "5.xlsx",
+            "format": "XLSX",
+            "week": "23-05-26",
+            "family_doctor": "CAMENCEAN"
+        }, {
+            "name": "CRISTIAN 1",
+            "filename": "5.xlsx",
+            "format": "XLSX",
+            "week": "23-05-05",
+            "family_doctor": "CRISTIAN"
+        }, {
+            "name": "CRISTIAN 2",
+            "filename": "5.xlsx",
+            "format": "XLSX",
+            "week": "23-05-12",
+            "family_doctor": "CRISTIAN"
+        }, {
+            "name": "CRISTIAN 3",
+            "filename": "5.xlsx",
+            "format": "XLSX",
+            "week": "23-05-19",
+            "family_doctor": "CRISTIAN"
+        }, {
+            "name": "CRISTIAN 4",
+            "filename": "5.xlsx",
+            "format": "XLSX",
+            "week": "23-05-26",
+            "family_doctor": "CRISTIAN"
+        }]
+    }]
+}
