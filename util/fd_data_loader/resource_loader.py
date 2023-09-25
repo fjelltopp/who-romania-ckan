@@ -107,7 +107,7 @@ def read_resource_sheet(filename, workbook, sheet):
     if report_date.weekday() != 4:
         log.warning(f"Report date {report_date} is not a Friday.")
         with open(root_dir + '/logs/not_friday_error.csv', 'a') as file:
-            file.write(f"{filename},{sheet},{report_date}\n")
+            file.write(f"{filename},{sheet},{report_date},{report_date.strftime('%A')}\n")
 
     year = str(report_date.year % 100)
     month = "{:02}".format(report_date.month)
@@ -218,7 +218,7 @@ def init_log_files():
     with open(root_dir + '/logs/report_date_error.csv', 'w') as file:
         file.write(f"file,sheet,report_date\n")
     with open(root_dir + '/logs/not_friday_error.csv', 'w') as file:
-        file.write(f"file,sheet,report_date\n")
+        file.write(f"file,sheet,report_date,weekday\n")
 
 
 if __name__ == '__main__':
