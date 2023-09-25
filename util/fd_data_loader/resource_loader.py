@@ -233,7 +233,7 @@ def swap_report_dates_and_periods_cell():
     with open(filename, 'r') as file:
         csv_reader = csv.reader(file)
         # Check number of rows
-        if len(list(csv_reader)) <= 1:
+        if len(list(csv_reader)) <= 1 or not CONFIG['swap_report_dates_and_periods']:
             log.info("No report date errors found")
             return
         next(csv_reader)
