@@ -8,10 +8,12 @@ from openpyxl.reader.excel import load_workbook
 
 CONFIG_FILENAME = os.getenv('CONFIG_FILENAME', 'config.json')
 CONFIG_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), CONFIG_FILENAME)
-DATASET_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'resources/family-medicine-reports')
 root_dir = os.path.dirname(os.path.abspath(__file__))
+
 with open(CONFIG_PATH, 'r') as config_file:
     CONFIG = json.loads(config_file.read())['config']
+
+RESOURCE_FOLDER = os.path.join(os.path.dirname(os.path.abspath(__file__)), CONFIG['resources_folders'])
 
 MONTHS = {
     1: "January",
@@ -57,11 +59,11 @@ def mutable_resource_dict(name, file_path, week, family_doctor):
 
 
 def traverse_folder_tree():
-    subfolders = [int(dir_name) for dir_name in os.listdir(CONFIG['resource_folder'])]
+    subfolders = [int(dir_name) for dir_name in os.listdir(CONFIG['data_folder'])]
     subfolders.sort(reverse=True)
     files = []
     for subfolder in subfolders:
-        for dirpath, dirnames, filenames in os.walk(CONFIG['resource_folder'] + '/' + str(subfolder)):
+        for dirpath, dirnames, filenames in os.walk(CONFIG['data_folder'] + '/' + str(subfolder)):
             # TODO edit folders names with full year
             year = '20' + (str(subfolder)[:2])
             # TODO fix this
