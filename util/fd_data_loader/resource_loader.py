@@ -98,7 +98,7 @@ def read_resource_sheet(filename, workbook, sheet):
 
     if not isinstance(report_date, datetime):
         log.warning(f"Report date {report_date} is not a date.")
-        print("Failed to use report date, attempting to load from report period ...")
+        log.warning("Failed to use report date, attempting to load from report period ...")
         with open(root_dir + '/logs/report_date_error.csv', 'a') as file:
             file.write(f"{filename},{sheet},{report_date}\n")
         report_date = active['B3'].value
@@ -142,7 +142,7 @@ def read_resource_sheet(filename, workbook, sheet):
 
 
 def load_file_sheets(file):
-    print("Reading file: ", file)
+    log.info("Reading file: ", file)
     workbook = load_workbook(file)
     sheets = [item for item in workbook.sheetnames if item.startswith('FD')]
     sheets.sort()
@@ -157,6 +157,7 @@ def generate_dataset_dict():
         "datasets": []
     }
     fd_files = traverse_folder_tree()
+
     for file_dict in fd_files:
         resources = []
         for file in file_dict["files"]:
@@ -217,46 +218,8 @@ def load_datasets(ckan):
                     log.error(f"Can't create resource {resource['name']}: {e.error_dict}")
 
 
-def init_log_files():
-    if CONFIG["overwrite_logs"]:
-        with open(root_dir + '/logs/report_date_error.csv', 'w') as file:
-            file.write(f"file,sheet,report_date\n")
-        with open(root_dir + '/logs/not_friday_error.csv', 'w') as file:
-            file.write(f"file,sheet,report_date,weekday\n")
-
-
-def swap_report_dates_and_periods_cell():
-    filename = root_dir + "/logs/report_date_error.csv"
-
-    if not os.path.exists(filename):
-        raise Exception("File not found")
-
-    with open(filename, 'r') as file:
-        csv_reader = csv.reader(file)
-        # Check number of rows
-        if len(list(csv_reader)) <= 1 or not CONFIG['swap_report_dates_and_periods']:
-            log.info("No report date errors found")
-            return
-        next(csv_reader)
-        for row in csv_reader:
-            current_file = row[0]
-            # Loading the XLSX file
-            workbook = load_workbook(os.path.join(root_dir, current_file))
-            sheet = workbook[row[1]]
-            report_date = sheet['B2'].value
-            report_period = sheet['B3'].value
-            sheet['B2'] = report_period
-            sheet['B3'] = report_date
-            workbook.save(current_file)
-            log.info(f"Swapped report date and period for file {current_file} and sheet {row[1]}")
-
-
 if __name__ == '__main__':
     ckan = ckanapi.RemoteCKAN(CONFIG['ckan_url'], apikey=CONFIG['ckan_api_key'])
-    # The swap will happen if CONFIG['swap_report_dates_and_periods'] is True
-    swap_report_dates_and_periods_cell()
-    # The logs will be overwritten if CONFIG['overwrite_logs'] is True
-    init_log_files()
     generate_dataset_dict()
     if not os.path.exists(root_dir + '/resources/datasets.json'):
         log.error("Failed to generate datasets.json")
