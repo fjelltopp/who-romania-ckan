@@ -72,7 +72,7 @@ itsdangerous = "==2.0.1"
 # Install packages under active development in editable mode
 ckan = {path = "./ckan", editable = true}
 ckanext-who-romania = {path = "./ckanext-who-romania", editable = true}
-
+boto3 = "==1.28.56"
 
 [dev-packages]
 beautifulsoup4 = "*"
@@ -108,4 +108,3 @@ pyfakefs = "*"
 pytest-ckan = "*"
 requests = "*"
 zxcvbn = "*"
-
