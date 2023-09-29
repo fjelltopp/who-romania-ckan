@@ -1,7 +1,7 @@
 {
   "config": {
-	  "ckan_url": "http://wrc.minikube",
-	  "ckan_api_key": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJTOG9fTEJCalhUU2wtbDI0aURBelpoMG04bXpaTXRSNVN0cmE3Ry13UDJBb1NabHFMOWRUTmVGV0x5b2hLaWVmLW10Q19seFZHbXFVcmxnNSIsImlhdCI6MTY4MzgwNTc2NX0.XQ-34lYAqiQoj83SfX371XwrjxC17e9ZABiiDjFl_tI",
+	  "ckan_url": "https://wrc.fjelltopp.org",
+	  "ckan_api_key": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJhWXZHUlBYWWNRaGcyWVdwWEVxSDJjSWt0QUpsMUVsMnFzMFlpT1RzWlo0RFRzZ2hvNFF2S0t0YnVZN1RxT3d5Yy14NkxBX2QwcXFzWHhqaSIsImlhdCI6MTY5NjAxNzIyM30.1VKdMx3vyhBY7oyQxHPFjRYn40zlYCGSfv82GpMLKhA",
 	  "data_folder": "./data",
 	  "resources_folders": "./resources/family-medicine-reports",
 	  "datasets_file": "/resources/datasets.json",

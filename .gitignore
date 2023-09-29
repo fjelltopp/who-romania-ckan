@@ -13,5 +13,7 @@
 build/
 util/demo_data_loader/prod_config.json
 util/demo_data_loader/dev_config.json
-util/demo_data_loader/inputs/demo_data/prod_*
-util/demo_data_loader/inputs/demo_data/dev_*
+util/demo_data_loader/demo_data/prod_*
+util/demo_data_loader/demo_data/dev_*
+util/fd_data_loader/data/
+util/fd_data_loader/resources/family-medicine-reports/

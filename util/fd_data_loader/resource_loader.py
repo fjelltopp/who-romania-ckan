@@ -2,6 +2,7 @@ import csv
 import json
 import logging
 import os
+from tqdm import tqdm
 from datetime import datetime
 
 import ckanapi
@@ -43,8 +44,8 @@ def mutable_dataset_dict(title, name, month, resources, **kwargs):
         "type": "family-medicine",
         "notes": kwargs.get("notes", ""),
         "owner_org": "who-romania",
-        "maintainer": kwargs.get("Admin", "Admin"),
-        "maintainer_email": kwargs.get("maintainer_email", "admin@localhost"),
+        "maintainer": kwargs.get("maintainer", "Georgiana Afumateanu"),
+        "maintainer_email": kwargs.get("maintainer_email", "afumateanug@who.int"),
         "month": month,
         "groups": [{"name": "family-medicine"}],
         "tags": [{"name": "Data"}],
@@ -122,12 +123,14 @@ def read_resource_sheet(filename, workbook, sheet):
     template_workbook = load_workbook(os.path.join(root_dir, CONFIG['template_file']))
     template_sheet = template_workbook.active
 
-    start_row, end_row = 6, 41
-    start_col, end_col = 1, 23  # A to W
+    start_row, end_row = 3, 35
+    start_col, end_col = 4, 23  # A to W
+
+    template_sheet.protection.disable()
 
     for row in range(start_row, end_row + 1):
         for col in range(start_col, end_col + 1):
-            cell_value = active.cell(row=row, column=col).value
+            cell_value = active.cell(row=row+5, column=col).value
             template_sheet.cell(row=row, column=col, value=cell_value)
 
     if not os.path.exists(new_folder_path):
@@ -158,18 +161,20 @@ def generate_dataset_dict():
     }
     fd_files = traverse_folder_tree()
 
-    for file_dict in fd_files:
+    for file_dict in tqdm(fd_files):
         resources = []
         for file in file_dict["files"]:
             resources.extend(load_file_sheets(file))
 
         dataset_dict["datasets"].append(mutable_dataset_dict(
-            title="Family Medicine Reports" + " for " + MONTHS[int(file_dict["month"])] + " " + file_dict["year"],
-            name="family-medicine-reports" + "-" + (file_dict["month"]) + "-" + (file_dict["year"]),
+            title="Family Medicine Data",
+            name="family-medicine-data" + "-" + (file_dict["month"]) + "-" + (file_dict["year"]),
             month=file_dict["year"] + "-" + file_dict["month"],
             year=file_dict["year"],
-            notes="WHO ROMANIA - Family Medicine Reports for " + MONTHS[int(file_dict["month"])] + " " + file_dict[
-                "year"],
+            notes=(f"Containing weekly reports to WHO Romania country office from selected family medicine "
+                   f"doctors for the month of {MONTHS[int(file_dict['month'])]}. This data covers total number "
+                   f"of consultation, as well as purpose of the consultation, syndromic surveillance, referrals "
+                   f"and vaccination. "),
             resources=resources
         ))
 
@@ -185,7 +190,7 @@ def load_datasets(ckan):
     """
     with open(DATASETS_FILE, 'r') as datasets_file:
         datasets = json.load(datasets_file)['datasets']
-        for dataset in datasets:
+        for dataset in tqdm(datasets):
             resources = dataset.pop('resources', [])
             dataset['resources'] = []
             try:
@@ -207,12 +212,22 @@ def load_datasets(ckan):
                                          resource['filename'])
                 resource['package_id'] = dataset['id']
                 try:
-                    with open(file_path, 'rb') as res_file:
-                        resource = ckan.call_action(
-                            'resource_create',
-                            resource,
-                            files={'upload': res_file}
-                        )
+
+                    try:
+                        with open(file_path, 'rb') as res_file:
+                            resource = ckan.call_action(
+                                'resource_create',
+                                resource,
+                                files={'upload': res_file}
+                            )
+                    except Exception:
+                        log.warning(f"Failed to load {resource['name']} for {dataset['name']}.  Trying again...")
+                        with open(file_path, 'rb') as res_file:
+                            resource = ckan.call_action(
+                                'resource_create',
+                                resource,
+                                files={'upload': res_file}
+                            )
                     log.info(f"Created resource {resource['name']}")
                 except ckanapi.errors.ValidationError as e:
                     log.error(f"Can't create resource {resource['name']}: {e.error_dict}")

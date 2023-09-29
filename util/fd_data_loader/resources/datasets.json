@@ -1,13 +1,13 @@
 {
     "datasets": [
         {
-            "title": "Family Medicine Reports for July 2023",
-            "name": "family-medicine-reports-07-2023",
+            "title": "Family Medicine Data",
+            "name": "family-medicine-data-07-2023",
             "type": "family-medicine",
-            "notes": "WHO ROMANIA - Family Medicine Reports for July 2023",
+            "notes": "Containing weekly reports to WHO Romania country office from selected family medicine doctors for the month of July. This data covers total number of consultation, as well as purpose of the consultation, syndromic surveillance, referrals and vaccination. ",
             "owner_org": "who-romania",
-            "maintainer": "Admin",
-            "maintainer_email": "admin@localhost",
+            "maintainer": "Georgiana Afumateanu",
+            "maintainer_email": "afumateanug@who.int",
             "month": "2023-07",
             "groups": [
                 {
@@ -22,101 +22,52 @@
             "year": "2023",
             "resources": [
                 {
-                    "name": "Report from Family Doctor BETCU for week number 28",
+                    "name": "Report from Family Doctor BETCU for week number 29",
                     "filename": "report.xlsx",
                     "format": "XLSX",
-                    "week": "23-07-14",
+                    "week": "23-07-21",
                     "family_doctor": "BETCU"
                 },
                 {
-                    "name": "Report from Family Doctor CAMENCEAN for week number 28",
+                    "name": "Report from Family Doctor CAMENCEAN for week number 29",
                     "filename": "report.xlsx",
                     "format": "XLSX",
-                    "week": "23-07-14",
+                    "week": "23-07-21",
                     "family_doctor": "CAMENCEAN"
                 },
                 {
-                    "name": "Report from Family Doctor CRISTIAN for week number 28",
+                    "name": "Report from Family Doctor CRISTIAN for week number 29",
                     "filename": "report.xlsx",
                     "format": "XLSX",
-                    "week": "23-07-14",
+                    "week": "23-07-21",
                     "family_doctor": "CRISTIAN"
                 },
                 {
-                    "name": "Report from Family Doctor DUMITRESCU for week number 28",
+                    "name": "Report from Family Doctor DUMITRESCU for week number 29",
                     "filename": "report.xlsx",
                     "format": "XLSX",
-                    "week": "23-07-14",
+                    "week": "23-07-21",
                     "family_doctor": "DUMITRESCU"
                 },
                 {
-                    "name": "Report from Family Doctor LACATUS for week number 28",
+                    "name": "Report from Family Doctor LACATUS for week number 29",
                     "filename": "report.xlsx",
                     "format": "XLSX",
-                    "week": "23-07-14",
+                    "week": "23-07-21",
                     "family_doctor": "LACATUS"
                 },
                 {
-                    "name": "Report from Family Doctor NECULAU for week number 28",
+                    "name": "Report from Family Doctor NECULAU for week number 29",
                     "filename": "report.xlsx",
                     "format": "XLSX",
-                    "week": "23-07-14",
+                    "week": "23-07-21",
                     "family_doctor": "NECULAU"
                 },
                 {
-                    "name": "Report from Family Doctor SERBAN for week number 28",
+                    "name": "Report from Family Doctor SERBAN for week number 29",
                     "filename": "report.xlsx",
                     "format": "XLSX",
-                    "week": "23-07-14",
-                    "family_doctor": "SERBAN"
-                },
-                {
-                    "name": "Report from Family Doctor BETCU for week number 30",
-                    "filename": "report.xlsx",
-                    "format": "XLSX",
-                    "week": "23-07-28",
-                    "family_doctor": "BETCU"
-                },
-                {
-                    "name": "Report from Family Doctor CAMENCEAN for week number 30",
-                    "filename": "report.xlsx",
-                    "format": "XLSX",
-                    "week": "23-07-28",
-                    "family_doctor": "CAMENCEAN"
-                },
-                {
-                    "name": "Report from Family Doctor CRISTIAN for week number 30",
-                    "filename": "report.xlsx",
-                    "format": "XLSX",
-                    "week": "23-07-28",
-                    "family_doctor": "CRISTIAN"
-                },
-                {
-                    "name": "Report from Family Doctor DUMITRESCU for week number 30",
-                    "filename": "report.xlsx",
-                    "format": "XLSX",
-                    "week": "23-07-28",
-                    "family_doctor": "DUMITRESCU"
-                },
-                {
-                    "name": "Report from Family Doctor LACATUS for week number 30",
-                    "filename": "report.xlsx",
-                    "format": "XLSX",
-                    "week": "23-07-28",
-                    "family_doctor": "LACATUS"
-                },
-                {
-                    "name": "Report from Family Doctor NECULAU for week number 30",
-                    "filename": "report.xlsx",
-                    "format": "XLSX",
-                    "week": "23-07-28",
-                    "family_doctor": "NECULAU"
-                },
-                {
-                    "name": "Report from Family Doctor SERBAN for week number 30",
-                    "filename": "report.xlsx",
-                    "format": "XLSX",
-                    "week": "23-07-28",
+                    "week": "23-07-21",
                     "family_doctor": "SERBAN"
                 },
                 {
@@ -169,64 +120,113 @@
                     "family_doctor": "SERBAN"
                 },
                 {
-                    "name": "Report from Family Doctor BETCU for week number 29",
+                    "name": "Report from Family Doctor BETCU for week number 30",
                     "filename": "report.xlsx",
                     "format": "XLSX",
-                    "week": "23-07-21",
+                    "week": "23-07-28",
                     "family_doctor": "BETCU"
                 },
                 {
-                    "name": "Report from Family Doctor CAMENCEAN for week number 29",
+                    "name": "Report from Family Doctor CAMENCEAN for week number 30",
                     "filename": "report.xlsx",
                     "format": "XLSX",
-                    "week": "23-07-21",
+                    "week": "23-07-28",
                     "family_doctor": "CAMENCEAN"
                 },
                 {
-                    "name": "Report from Family Doctor CRISTIAN for week number 29",
+                    "name": "Report from Family Doctor CRISTIAN for week number 30",
                     "filename": "report.xlsx",
                     "format": "XLSX",
-                    "week": "23-07-21",
+                    "week": "23-07-28",
                     "family_doctor": "CRISTIAN"
                 },
                 {
-                    "name": "Report from Family Doctor DUMITRESCU for week number 29",
+                    "name": "Report from Family Doctor DUMITRESCU for week number 30",
                     "filename": "report.xlsx",
                     "format": "XLSX",
-                    "week": "23-07-21",
+                    "week": "23-07-28",
                     "family_doctor": "DUMITRESCU"
                 },
                 {
-                    "name": "Report from Family Doctor LACATUS for week number 29",
+                    "name": "Report from Family Doctor LACATUS for week number 30",
                     "filename": "report.xlsx",
                     "format": "XLSX",
-                    "week": "23-07-21",
+                    "week": "23-07-28",
                     "family_doctor": "LACATUS"
                 },
                 {
-                    "name": "Report from Family Doctor NECULAU for week number 29",
+                    "name": "Report from Family Doctor NECULAU for week number 30",
                     "filename": "report.xlsx",
                     "format": "XLSX",
-                    "week": "23-07-21",
+                    "week": "23-07-28",
                     "family_doctor": "NECULAU"
                 },
                 {
-                    "name": "Report from Family Doctor SERBAN for week number 29",
+                    "name": "Report from Family Doctor SERBAN for week number 30",
                     "filename": "report.xlsx",
                     "format": "XLSX",
-                    "week": "23-07-21",
+                    "week": "23-07-28",
+                    "family_doctor": "SERBAN"
+                },
+                {
+                    "name": "Report from Family Doctor BETCU for week number 28",
+                    "filename": "report.xlsx",
+                    "format": "XLSX",
+                    "week": "23-07-14",
+                    "family_doctor": "BETCU"
+                },
+                {
+                    "name": "Report from Family Doctor CAMENCEAN for week number 28",
+                    "filename": "report.xlsx",
+                    "format": "XLSX",
+                    "week": "23-07-14",
+                    "family_doctor": "CAMENCEAN"
+                },
+                {
+                    "name": "Report from Family Doctor CRISTIAN for week number 28",
+                    "filename": "report.xlsx",
+                    "format": "XLSX",
+                    "week": "23-07-14",
+                    "family_doctor": "CRISTIAN"
+                },
+                {
+                    "name": "Report from Family Doctor DUMITRESCU for week number 28",
+                    "filename": "report.xlsx",
+                    "format": "XLSX",
+                    "week": "23-07-14",
+                    "family_doctor": "DUMITRESCU"
+                },
+                {
+                    "name": "Report from Family Doctor LACATUS for week number 28",
+                    "filename": "report.xlsx",
+                    "format": "XLSX",
+                    "week": "23-07-14",
+                    "family_doctor": "LACATUS"
+                },
+                {
+                    "name": "Report from Family Doctor NECULAU for week number 28",
+                    "filename": "report.xlsx",
+                    "format": "XLSX",
+                    "week": "23-07-14",
+                    "family_doctor": "NECULAU"
+                },
+                {
+                    "name": "Report from Family Doctor SERBAN for week number 28",
+                    "filename": "report.xlsx",
+                    "format": "XLSX",
+                    "week": "23-07-14",
                     "family_doctor": "SERBAN"
                 }
             ]
         },
         {
-            "title": "Family Medicine Reports for June 2023",
-            "name": "family-medicine-reports-06-2023",
+            "title": "Family Medicine Data",
+            "name": "family-medicine-data-06-2023",
             "type": "family-medicine",
-            "notes": "WHO ROMANIA - Family Medicine Reports for June 2023",
+            "notes": "Containing weekly reports to WHO Romania country office from selected family medicine doctors for the month of June. This data covers total number of consultation, as well as purpose of the consultation, syndromic surveillance, referrals and vaccination. ",
             "owner_org": "who-romania",
-            "maintainer": "Admin",
-            "maintainer_email": "admin@localhost",
+            "maintainer": "Georgiana Afumateanu",
+            "maintainer_email": "afumateanug@who.int",
             "month": "2023-06",
             "groups": [
                 {
@@ -240,6 +240,104 @@
             ],
             "year": "2023",
             "resources": [
+                {
+                    "name": "Report from Family Doctor BETCU for week number 23",
+                    "filename": "report.xlsx",
+                    "format": "XLSX",
+                    "week": "23-06-09",
+                    "family_doctor": "BETCU"
+                },
+                {
+                    "name": "Report from Family Doctor CAMENCEAN for week number 23",
+                    "filename": "report.xlsx",
+                    "format": "XLSX",
+                    "week": "23-06-09",
+                    "family_doctor": "CAMENCEAN"
+                },
+                {
+                    "name": "Report from Family Doctor CRISTIAN for week number 23",
+                    "filename": "report.xlsx",
+                    "format": "XLSX",
+                    "week": "23-06-09",
+                    "family_doctor": "CRISTIAN"
+                },
+                {
+                    "name": "Report from Family Doctor DUMITRESCU for week number 23",
+                    "filename": "report.xlsx",
+                    "format": "XLSX",
+                    "week": "23-06-09",
+                    "family_doctor": "DUMITRESCU"
+                },
+                {
+                    "name": "Report from Family Doctor LACATUS for week number 23",
+                    "filename": "report.xlsx",
+                    "format": "XLSX",
+                    "week": "23-06-09",
+                    "family_doctor": "LACATUS"
+                },
+                {
+                    "name": "Report from Family Doctor NECULAU for week number 23",
+                    "filename": "report.xlsx",
+                    "format": "XLSX",
+                    "week": "23-06-09",
+                    "family_doctor": "NECULAU"
+                },
+                {
+                    "name": "Report from Family Doctor SERBAN for week number 23",
+                    "filename": "report.xlsx",
+                    "format": "XLSX",
+                    "week": "23-06-09",
+                    "family_doctor": "SERBAN"
+                },
+                {
+                    "name": "Report from Family Doctor BETCU for week number 25",
+                    "filename": "report.xlsx",
+                    "format": "XLSX",
+                    "week": "23-06-23",
+                    "family_doctor": "BETCU"
+                },
+                {
+                    "name": "Report from Family Doctor CAMENCEAN for week number 25",
+                    "filename": "report.xlsx",
+                    "format": "XLSX",
+                    "week": "23-06-23",
+                    "family_doctor": "CAMENCEAN"
+                },
+                {
+                    "name": "Report from Family Doctor CRISTIAN for week number 25",
+                    "filename": "report.xlsx",
+                    "format": "XLSX",
+                    "week": "23-06-23",
+                    "family_doctor": "CRISTIAN"
+                },
+                {
+                    "name": "Report from Family Doctor DUMITRESCU for week number 25",
+                    "filename": "report.xlsx",
+                    "format": "XLSX",
+                    "week": "23-06-23",
+                    "family_doctor": "DUMITRESCU"
+                },
+                {
+                    "name": "Report from Family Doctor LACATUS for week number 25",
+                    "filename": "report.xlsx",
+                    "format": "XLSX",
+                    "week": "23-06-23",
+                    "family_doctor": "LACATUS"
+                },
+                {
+                    "name": "Report from Family Doctor NECULAU for week number 25",
+                    "filename": "report.xlsx",
+                    "format": "XLSX",
+                    "week": "23-06-23",
+                    "family_doctor": "NECULAU"
+                },
+                {
+                    "name": "Report from Family Doctor SERBAN for week number 25",
+                    "filename": "report.xlsx",
+                    "format": "XLSX",
+                    "week": "23-06-23",
+                    "family_doctor": "SERBAN"
+                },
                 {
                     "name": "Report from Family Doctor BETCU for week number 24",
                     "filename": "report.xlsx",
@@ -337,115 +435,17 @@
                     "format": "XLSX",
                     "week": "23-06-30",
                     "family_doctor": "SERBAN"
-                },
-                {
-                    "name": "Report from Family Doctor BETCU for week number 25",
-                    "filename": "report.xlsx",
-                    "format": "XLSX",
-                    "week": "23-06-23",
-                    "family_doctor": "BETCU"
-                },
-                {
-                    "name": "Report from Family Doctor CAMENCEAN for week number 25",
-                    "filename": "report.xlsx",
-                    "format": "XLSX",
-                    "week": "23-06-23",
-                    "family_doctor": "CAMENCEAN"
-                },
-                {
-                    "name": "Report from Family Doctor CRISTIAN for week number 25",
-                    "filename": "report.xlsx",
-                    "format": "XLSX",
-                    "week": "23-06-23",
-                    "family_doctor": "CRISTIAN"
-                },
-                {
-                    "name": "Report from Family Doctor DUMITRESCU for week number 25",
-                    "filename": "report.xlsx",
-                    "format": "XLSX",
-                    "week": "23-06-23",
-                    "family_doctor": "DUMITRESCU"
-                },
-                {
-                    "name": "Report from Family Doctor LACATUS for week number 25",
-                    "filename": "report.xlsx",
-                    "format": "XLSX",
-                    "week": "23-06-23",
-                    "family_doctor": "LACATUS"
-                },
-                {
-                    "name": "Report from Family Doctor NECULAU for week number 25",
-                    "filename": "report.xlsx",
-                    "format": "XLSX",
-                    "week": "23-06-23",
-                    "family_doctor": "NECULAU"
-                },
-                {
-                    "name": "Report from Family Doctor SERBAN for week number 25",
-                    "filename": "report.xlsx",
-                    "format": "XLSX",
-                    "week": "23-06-23",
-                    "family_doctor": "SERBAN"
-                },
-                {
-                    "name": "Report from Family Doctor BETCU for week number 23",
-                    "filename": "report.xlsx",
-                    "format": "XLSX",
-                    "week": "23-06-09",
-                    "family_doctor": "BETCU"
-                },
-                {
-                    "name": "Report from Family Doctor CAMENCEAN for week number 23",
-                    "filename": "report.xlsx",
-                    "format": "XLSX",
-                    "week": "23-06-09",
-                    "family_doctor": "CAMENCEAN"
-                },
-                {
-                    "name": "Report from Family Doctor CRISTIAN for week number 23",
-                    "filename": "report.xlsx",
-                    "format": "XLSX",
-                    "week": "23-06-09",
-                    "family_doctor": "CRISTIAN"
-                },
-                {
-                    "name": "Report from Family Doctor DUMITRESCU for week number 23",
-                    "filename": "report.xlsx",
-                    "format": "XLSX",
-                    "week": "23-06-09",
-                    "family_doctor": "DUMITRESCU"
-                },
-                {
-                    "name": "Report from Family Doctor LACATUS for week number 23",
-                    "filename": "report.xlsx",
-                    "format": "XLSX",
-                    "week": "23-06-09",
-                    "family_doctor": "LACATUS"
-                },
-                {
-                    "name": "Report from Family Doctor NECULAU for week number 23",
-                    "filename": "report.xlsx",
-                    "format": "XLSX",
-                    "week": "23-06-09",
-                    "family_doctor": "NECULAU"
-                },
-                {
-                    "name": "Report from Family Doctor SERBAN for week number 23",
-                    "filename": "report.xlsx",
-                    "format": "XLSX",
-                    "week": "23-06-09",
-                    "family_doctor": "SERBAN"
                 }
             ]
         },
         {
-            "title": "Family Medicine Reports for May 2023",
-            "name": "family-medicine-reports-05-2023",
+            "title": "Family Medicine Data",
+            "name": "family-medicine-data-05-2023",
             "type": "family-medicine",
-            "notes": "WHO ROMANIA - Family Medicine Reports for May 2023",
+            "notes": "Containing weekly reports to WHO Romania country office from selected family medicine doctors for the month of May. This data covers total number of consultation, as well as purpose of the consultation, syndromic surveillance, referrals and vaccination. ",
             "owner_org": "who-romania",
-            "maintainer": "Admin",
-            "maintainer_email": "admin@localhost",
+            "maintainer": "Georgiana Afumateanu",
+            "maintainer_email": "afumateanug@who.int",
             "month": "2023-05",
             "groups": [
                 {
@@ -459,55 +459,6 @@
             ],
             "year": "2023",
             "resources": [
-                {
-                    "name": "Report from Family Doctor BETCU for week number 18",
-                    "filename": "report.xlsx",
-                    "format": "XLSX",
-                    "week": "23-05-05",
-                    "family_doctor": "BETCU"
-                },
-                {
-                    "name": "Report from Family Doctor CAMENCEAN for week number 18",
-                    "filename": "report.xlsx",
-                    "format": "XLSX",
-                    "week": "23-05-05",
-                    "family_doctor": "CAMENCEAN"
-                },
-                {
-                    "name": "Report from Family Doctor CRISTIAN for week number 18",
-                    "filename": "report.xlsx",
-                    "format": "XLSX",
-                    "week": "23-05-05",
-                    "family_doctor": "CRISTIAN"
-                },
-                {
-                    "name": "Report from Family Doctor DUMITRESCU for week number 18",
-                    "filename": "report.xlsx",
-                    "format": "XLSX",
-                    "week": "23-05-05",
-                    "family_doctor": "DUMITRESCU"
-                },
-                {
-                    "name": "Report from Family Doctor LACATUS for week number 18",
-                    "filename": "report.xlsx",
-                    "format": "XLSX",
-                    "week": "23-05-05",
-                    "family_doctor": "LACATUS"
-                },
-                {
-                    "name": "Report from Family Doctor NECULAU for week number 18",
-                    "filename": "report.xlsx",
-                    "format": "XLSX",
-                    "week": "23-05-05",
-                    "family_doctor": "NECULAU"
-                },
-                {
-                    "name": "Report from Family Doctor SERBAN for week number 18",
-                    "filename": "report.xlsx",
-                    "format": "XLSX",
-                    "week": "23-05-05",
-                    "family_doctor": "SERBAN"
-                },
                 {
                     "name": "Report from Family Doctor BETCU for week number 22",
                     "filename": "report.xlsx",
@@ -555,55 +506,6 @@
                     "filename": "report.xlsx",
                     "format": "XLSX",
                     "week": "23-06-02",
-                    "family_doctor": "SERBAN"
-                },
-                {
-                    "name": "Report from Family Doctor BETCU for week number 21",
-                    "filename": "report.xlsx",
-                    "format": "XLSX",
-                    "week": "23-05-26",
-                    "family_doctor": "BETCU"
-                },
-                {
-                    "name": "Report from Family Doctor CAMENCEAN for week number 21",
-                    "filename": "report.xlsx",
-                    "format": "XLSX",
-                    "week": "23-05-26",
-                    "family_doctor": "CAMENCEAN"
-                },
-                {
-                    "name": "Report from Family Doctor CRISTIAN for week number 21",
-                    "filename": "report.xlsx",
-                    "format": "XLSX",
-                    "week": "23-05-26",
-                    "family_doctor": "CRISTIAN"
-                },
-                {
-                    "name": "Report from Family Doctor DUMITRESCU for week number 21",
-                    "filename": "report.xlsx",
-                    "format": "XLSX",
-                    "week": "23-05-26",
-                    "family_doctor": "DUMITRESCU"
-                },
-                {
-                    "name": "Report from Family Doctor LACATUS for week number 21",
-                    "filename": "report.xlsx",
-                    "format": "XLSX",
-                    "week": "23-05-26",
-                    "family_doctor": "LACATUS"
-                },
-                {
-                    "name": "Report from Family Doctor NECULAU for week number 21",
-                    "filename": "report.xlsx",
-                    "format": "XLSX",
-                    "week": "23-05-26",
-                    "family_doctor": "NECULAU"
-                },
-                {
-                    "name": "Report from Family Doctor SERBAN for week number 21",
-                    "filename": "report.xlsx",
-                    "format": "XLSX",
-                    "week": "23-05-26",
                     "family_doctor": "SERBAN"
                 },
                 {
@@ -703,17 +605,115 @@
                     "format": "XLSX",
                     "week": "23-05-19",
                     "family_doctor": "SERBAN"
+                },
+                {
+                    "name": "Report from Family Doctor BETCU for week number 18",
+                    "filename": "report.xlsx",
+                    "format": "XLSX",
+                    "week": "23-05-05",
+                    "family_doctor": "BETCU"
+                },
+                {
+                    "name": "Report from Family Doctor CAMENCEAN for week number 18",
+                    "filename": "report.xlsx",
+                    "format": "XLSX",
+                    "week": "23-05-05",
+                    "family_doctor": "CAMENCEAN"
+                },
+                {
+                    "name": "Report from Family Doctor CRISTIAN for week number 18",
+                    "filename": "report.xlsx",
+                    "format": "XLSX",
+                    "week": "23-05-05",
+                    "family_doctor": "CRISTIAN"
+                },
+                {
+                    "name": "Report from Family Doctor DUMITRESCU for week number 18",
+                    "filename": "report.xlsx",
+                    "format": "XLSX",
+                    "week": "23-05-05",
+                    "family_doctor": "DUMITRESCU"
+                },
+                {
+                    "name": "Report from Family Doctor LACATUS for week number 18",
+                    "filename": "report.xlsx",
+                    "format": "XLSX",
+                    "week": "23-05-05",
+                    "family_doctor": "LACATUS"
+                },
+                {
+                    "name": "Report from Family Doctor NECULAU for week number 18",
+                    "filename": "report.xlsx",
+                    "format": "XLSX",
+                    "week": "23-05-05",
+                    "family_doctor": "NECULAU"
+                },
+                {
+                    "name": "Report from Family Doctor SERBAN for week number 18",
+                    "filename": "report.xlsx",
+                    "format": "XLSX",
+                    "week": "23-05-05",
+                    "family_doctor": "SERBAN"
+                },
+                {
+                    "name": "Report from Family Doctor BETCU for week number 21",
+                    "filename": "report.xlsx",
+                    "format": "XLSX",
+                    "week": "23-05-26",
+                    "family_doctor": "BETCU"
+                },
+                {
+                    "name": "Report from Family Doctor CAMENCEAN for week number 21",
+                    "filename": "report.xlsx",
+                    "format": "XLSX",
+                    "week": "23-05-26",
+                    "family_doctor": "CAMENCEAN"
+                },
+                {
+                    "name": "Report from Family Doctor CRISTIAN for week number 21",
+                    "filename": "report.xlsx",
+                    "format": "XLSX",
+                    "week": "23-05-26",
+                    "family_doctor": "CRISTIAN"
+                },
+                {
+                    "name": "Report from Family Doctor DUMITRESCU for week number 21",
+                    "filename": "report.xlsx",
+                    "format": "XLSX",
+                    "week": "23-05-26",
+                    "family_doctor": "DUMITRESCU"
+                },
+                {
+                    "name": "Report from Family Doctor LACATUS for week number 21",
+                    "filename": "report.xlsx",
+                    "format": "XLSX",
+                    "week": "23-05-26",
+                    "family_doctor": "LACATUS"
+                },
+                {
+                    "name": "Report from Family Doctor NECULAU for week number 21",
+                    "filename": "report.xlsx",
+                    "format": "XLSX",
+                    "week": "23-05-26",
+                    "family_doctor": "NECULAU"
+                },
+                {
+                    "name": "Report from Family Doctor SERBAN for week number 21",
+                    "filename": "report.xlsx",
+                    "format": "XLSX",
+                    "week": "23-05-26",
+                    "family_doctor": "SERBAN"
                 }
             ]
         },
         {
-            "title": "Family Medicine Reports for April 2023",
-            "name": "family-medicine-reports-04-2023",
+            "title": "Family Medicine Data",
+            "name": "family-medicine-data-04-2023",
             "type": "family-medicine",
-            "notes": "WHO ROMANIA - Family Medicine Reports for April 2023",
+            "notes": "Containing weekly reports to WHO Romania country office from selected family medicine doctors for the month of April. This data covers total number of consultation, as well as purpose of the consultation, syndromic surveillance, referrals and vaccination. ",
             "owner_org": "who-romania",
-            "maintainer": "Admin",
-            "maintainer_email": "admin@localhost",
+            "maintainer": "Georgiana Afumateanu",
+            "maintainer_email": "afumateanug@who.int",
             "month": "2023-04",
             "groups": [
                 {
@@ -826,55 +826,6 @@
                     "family_doctor": "SERBAN"
                 },
                 {
-                    "name": "Report from Family Doctor BETCU for week number 16",
-                    "filename": "report.xlsx",
-                    "format": "XLSX",
-                    "week": "23-04-21",
-                    "family_doctor": "BETCU"
-                },
-                {
-                    "name": "Report from Family Doctor CAMENCEAN for week number 16",
-                    "filename": "report.xlsx",
-                    "format": "XLSX",
-                    "week": "23-04-21",
-                    "family_doctor": "CAMENCEAN"
-                },
-                {
-                    "name": "Report from Family Doctor CRISTIAN for week number 16",
-                    "filename": "report.xlsx",
-                    "format": "XLSX",
-                    "week": "23-04-21",
-                    "family_doctor": "CRISTIAN"
-                },
-                {
-                    "name": "Report from Family Doctor DUMITRESCU for week number 16",
-                    "filename": "report.xlsx",
-                    "format": "XLSX",
-                    "week": "23-04-21",
-                    "family_doctor": "DUMITRESCU"
-                },
-                {
-                    "name": "Report from Family Doctor LACATUS for week number 16",
-                    "filename": "report.xlsx",
-                    "format": "XLSX",
-                    "week": "23-04-21",
-                    "family_doctor": "LACATUS"
-                },
-                {
-                    "name": "Report from Family Doctor NECULAU for week number 16",
-                    "filename": "report.xlsx",
-                    "format": "XLSX",
-                    "week": "23-04-21",
-                    "family_doctor": "NECULAU"
-                },
-                {
-                    "name": "Report from Family Doctor SERBAN for week number 16",
-                    "filename": "report.xlsx",
-                    "format": "XLSX",
-                    "week": "23-04-21",
-                    "family_doctor": "SERBAN"
-                },
-                {
                     "name": "Report from Family Doctor BETCU for week number 14",
                     "filename": "report.xlsx",
                     "format": "XLSX",
@@ -922,17 +873,66 @@
                     "format": "XLSX",
                     "week": "23-04-07",
                     "family_doctor": "SERBAN"
+                },
+                {
+                    "name": "Report from Family Doctor BETCU for week number 16",
+                    "filename": "report.xlsx",
+                    "format": "XLSX",
+                    "week": "23-04-21",
+                    "family_doctor": "BETCU"
+                },
+                {
+                    "name": "Report from Family Doctor CAMENCEAN for week number 16",
+                    "filename": "report.xlsx",
+                    "format": "XLSX",
+                    "week": "23-04-21",
+                    "family_doctor": "CAMENCEAN"
+                },
+                {
+                    "name": "Report from Family Doctor CRISTIAN for week number 16",
+                    "filename": "report.xlsx",
+                    "format": "XLSX",
+                    "week": "23-04-21",
+                    "family_doctor": "CRISTIAN"
+                },
+                {
+                    "name": "Report from Family Doctor DUMITRESCU for week number 16",
+                    "filename": "report.xlsx",
+                    "format": "XLSX",
+                    "week": "23-04-21",
+                    "family_doctor": "DUMITRESCU"
+                },
+                {
+                    "name": "Report from Family Doctor LACATUS for week number 16",
+                    "filename": "report.xlsx",
+                    "format": "XLSX",
+                    "week": "23-04-21",
+                    "family_doctor": "LACATUS"
+                },
+                {
+                    "name": "Report from Family Doctor NECULAU for week number 16",
+                    "filename": "report.xlsx",
+                    "format": "XLSX",
+                    "week": "23-04-21",
+                    "family_doctor": "NECULAU"
+                },
+                {
+                    "name": "Report from Family Doctor SERBAN for week number 16",
+                    "filename": "report.xlsx",
+                    "format": "XLSX",
+                    "week": "23-04-21",
+                    "family_doctor": "SERBAN"
                 }
             ]
         },
         {
-            "title": "Family Medicine Reports for March 2023",
-            "name": "family-medicine-reports-03-2023",
+            "title": "Family Medicine Data",
+            "name": "family-medicine-data-03-2023",
             "type": "family-medicine",
-            "notes": "WHO ROMANIA - Family Medicine Reports for March 2023",
+            "notes": "Containing weekly reports to WHO Romania country office from selected family medicine doctors for the month of March. This data covers total number of consultation, as well as purpose of the consultation, syndromic surveillance, referrals and vaccination. ",
             "owner_org": "who-romania",
-            "maintainer": "Admin",
-            "maintainer_email": "admin@localhost",
+            "maintainer": "Georgiana Afumateanu",
+            "maintainer_email": "afumateanug@who.int",
             "month": "2023-03",
             "groups": [
                 {
@@ -996,52 +996,52 @@
                     "family_doctor": "SERBAN"
                 },
                 {
-                    "name": "Report from Family Doctor BETCU for week number 10",
+                    "name": "Report from Family Doctor BETCU for week number 12",
                     "filename": "report.xlsx",
                     "format": "XLSX",
-                    "week": "23-03-10",
+                    "week": "23-03-24",
                     "family_doctor": "BETCU"
                 },
                 {
-                    "name": "Report from Family Doctor CAMENCEAN for week number 10",
+                    "name": "Report from Family Doctor CAMENCEAN for week number 12",
                     "filename": "report.xlsx",
                     "format": "XLSX",
-                    "week": "23-03-10",
+                    "week": "23-03-24",
                     "family_doctor": "CAMENCEAN"
                 },
                 {
-                    "name": "Report from Family Doctor CRISTIAN for week number 10",
+                    "name": "Report from Family Doctor CRISTIAN for week number 12",
                     "filename": "report.xlsx",
                     "format": "XLSX",
-                    "week": "23-03-10",
+                    "week": "23-03-24",
                     "family_doctor": "CRISTIAN"
                 },
                 {
-                    "name": "Report from Family Doctor DUMITRESCU for week number 10",
+                    "name": "Report from Family Doctor DUMITRESCU for week number 12",
                     "filename": "report.xlsx",
                     "format": "XLSX",
-                    "week": "23-03-10",
+                    "week": "23-03-24",
                     "family_doctor": "DUMITRESCU"
                 },
                 {
-                    "name": "Report from Family Doctor LACATUS for week number 10",
+                    "name": "Report from Family Doctor LACATUS for week number 12",
                     "filename": "report.xlsx",
                     "format": "XLSX",
-                    "week": "23-03-10",
+                    "week": "23-03-24",
                     "family_doctor": "LACATUS"
                 },
                 {
-                    "name": "Report from Family Doctor NECULAU for week number 10",
+                    "name": "Report from Family Doctor NECULAU for week number 12",
                     "filename": "report.xlsx",
                     "format": "XLSX",
-                    "week": "23-03-10",
+                    "week": "23-03-24",
                     "family_doctor": "NECULAU"
                 },
                 {
-                    "name": "Report from Family Doctor SERBAN for week number 10",
+                    "name": "Report from Family Doctor SERBAN for week number 12",
                     "filename": "report.xlsx",
                     "format": "XLSX",
-                    "week": "23-03-10",
+                    "week": "23-03-24",
                     "family_doctor": "SERBAN"
                 },
                 {
@@ -1094,64 +1094,64 @@
                     "family_doctor": "SERBAN"
                 },
                 {
-                    "name": "Report from Family Doctor BETCU for week number 12",
+                    "name": "Report from Family Doctor BETCU for week number 10",
                     "filename": "report.xlsx",
                     "format": "XLSX",
-                    "week": "23-03-24",
+                    "week": "23-03-10",
                     "family_doctor": "BETCU"
                 },
                 {
-                    "name": "Report from Family Doctor CAMENCEAN for week number 12",
+                    "name": "Report from Family Doctor CAMENCEAN for week number 10",
                     "filename": "report.xlsx",
                     "format": "XLSX",
-                    "week": "23-03-24",
+                    "week": "23-03-10",
                     "family_doctor": "CAMENCEAN"
                 },
                 {
-                    "name": "Report from Family Doctor CRISTIAN for week number 12",
+                    "name": "Report from Family Doctor CRISTIAN for week number 10",
                     "filename": "report.xlsx",
                     "format": "XLSX",
-                    "week": "23-03-24",
+                    "week": "23-03-10",
                     "family_doctor": "CRISTIAN"
                 },
                 {
-                    "name": "Report from Family Doctor DUMITRESCU for week number 12",
+                    "name": "Report from Family Doctor DUMITRESCU for week number 10",
                     "filename": "report.xlsx",
                     "format": "XLSX",
-                    "week": "23-03-24",
+                    "week": "23-03-10",
                     "family_doctor": "DUMITRESCU"
                 },
                 {
-                    "name": "Report from Family Doctor LACATUS for week number 12",
+                    "name": "Report from Family Doctor LACATUS for week number 10",
                     "filename": "report.xlsx",
                     "format": "XLSX",
-                    "week": "23-03-24",
+                    "week": "23-03-10",
                     "family_doctor": "LACATUS"
                 },
                 {
-                    "name": "Report from Family Doctor NECULAU for week number 12",
+                    "name": "Report from Family Doctor NECULAU for week number 10",
                     "filename": "report.xlsx",
                     "format": "XLSX",
-                    "week": "23-03-24",
+                    "week": "23-03-10",
                     "family_doctor": "NECULAU"
                 },
                 {
-                    "name": "Report from Family Doctor SERBAN for week number 12",
+                    "name": "Report from Family Doctor SERBAN for week number 10",
                     "filename": "report.xlsx",
                     "format": "XLSX",
-                    "week": "23-03-24",
+                    "week": "23-03-10",
                     "family_doctor": "SERBAN"
                 }
             ]
         },
         {
-            "title": "Family Medicine Reports for February 2023",
-            "name": "family-medicine-reports-02-2023",
+            "title": "Family Medicine Data",
+            "name": "family-medicine-data-02-2023",
             "type": "family-medicine",
-            "notes": "WHO ROMANIA - Family Medicine Reports for February 2023",
+            "notes": "Containing weekly reports to WHO Romania country office from selected family medicine doctors for the month of February. This data covers total number of consultation, as well as purpose of the consultation, syndromic surveillance, referrals and vaccination. ",
             "owner_org": "who-romania",
-            "maintainer": "Admin",
-            "maintainer_email": "admin@localhost",
+            "maintainer": "Georgiana Afumateanu",
+            "maintainer_email": "afumateanug@who.int",
             "month": "2023-02",
             "groups": [
                 {
@@ -1215,55 +1215,6 @@
                     "family_doctor": "SERBAN"
                 },
                 {
-                    "name": "Report from Family Doctor BETCU for week number 8",
-                    "filename": "report.xlsx",
-                    "format": "XLSX",
-                    "week": "23-02-24",
-                    "family_doctor": "BETCU"
-                },
-                {
-                    "name": "Report from Family Doctor CAMENCEAN for week number 8",
-                    "filename": "report.xlsx",
-                    "format": "XLSX",
-                    "week": "23-02-24",
-                    "family_doctor": "CAMENCEAN"
-                },
-                {
-                    "name": "Report from Family Doctor CRISTIAN for week number 8",
-                    "filename": "report.xlsx",
-                    "format": "XLSX",
-                    "week": "23-02-24",
-                    "family_doctor": "CRISTIAN"
-                },
-                {
-                    "name": "Report from Family Doctor DUMITRESCU for week number 8",
-                    "filename": "report.xlsx",
-                    "format": "XLSX",
-                    "week": "23-02-24",
-                    "family_doctor": "DUMITRESCU"
-                },
-                {
-                    "name": "Report from Family Doctor LACATUS for week number 8",
-                    "filename": "report.xlsx",
-                    "format": "XLSX",
-                    "week": "23-02-24",
-                    "family_doctor": "LACATUS"
-                },
-                {
-                    "name": "Report from Family Doctor NECULAU for week number 8",
-                    "filename": "report.xlsx",
-                    "format": "XLSX",
-                    "week": "23-02-24",
-                    "family_doctor": "NECULAU"
-                },
-                {
-                    "name": "Report from Family Doctor SERBAN for week number 8",
-                    "filename": "report.xlsx",
-                    "format": "XLSX",
-                    "week": "23-02-24",
-                    "family_doctor": "SERBAN"
-                },
-                {
                     "name": "Report from Family Doctor BETCU for week number 9",
                     "filename": "report.xlsx",
                     "format": "XLSX",
@@ -1310,6 +1261,55 @@
                     "filename": "report.xlsx",
                     "format": "XLSX",
                     "week": "23-03-03",
+                    "family_doctor": "SERBAN"
+                },
+                {
+                    "name": "Report from Family Doctor BETCU for week number 8",
+                    "filename": "report.xlsx",
+                    "format": "XLSX",
+                    "week": "23-02-24",
+                    "family_doctor": "BETCU"
+                },
+                {
+                    "name": "Report from Family Doctor CAMENCEAN for week number 8",
+                    "filename": "report.xlsx",
+                    "format": "XLSX",
+                    "week": "23-02-24",
+                    "family_doctor": "CAMENCEAN"
+                },
+                {
+                    "name": "Report from Family Doctor CRISTIAN for week number 8",
+                    "filename": "report.xlsx",
+                    "format": "XLSX",
+                    "week": "23-02-24",
+                    "family_doctor": "CRISTIAN"
+                },
+                {
+                    "name": "Report from Family Doctor DUMITRESCU for week number 8",
+                    "filename": "report.xlsx",
+                    "format": "XLSX",
+                    "week": "23-02-24",
+                    "family_doctor": "DUMITRESCU"
+                },
+                {
+                    "name": "Report from Family Doctor LACATUS for week number 8",
+                    "filename": "report.xlsx",
+                    "format": "XLSX",
+                    "week": "23-02-24",
+                    "family_doctor": "LACATUS"
+                },
+                {
+                    "name": "Report from Family Doctor NECULAU for week number 8",
+                    "filename": "report.xlsx",
+                    "format": "XLSX",
+                    "week": "23-02-24",
+                    "family_doctor": "NECULAU"
+                },
+                {
+                    "name": "Report from Family Doctor SERBAN for week number 8",
+                    "filename": "report.xlsx",
+                    "format": "XLSX",
+                    "week": "23-02-24",
                     "family_doctor": "SERBAN"
                 },
                 {
@@ -1364,13 +1364,13 @@
             ]
         },
         {
-            "title": "Family Medicine Reports for January 2023",
-            "name": "family-medicine-reports-01-2023",
+            "title": "Family Medicine Data",
+            "name": "family-medicine-data-01-2023",
             "type": "family-medicine",
-            "notes": "WHO ROMANIA - Family Medicine Reports for January 2023",
+            "notes": "Containing weekly reports to WHO Romania country office from selected family medicine doctors for the month of January. This data covers total number of consultation, as well as purpose of the consultation, syndromic surveillance, referrals and vaccination. ",
             "owner_org": "who-romania",
-            "maintainer": "Admin",
-            "maintainer_email": "admin@localhost",
+            "maintainer": "Georgiana Afumateanu",
+            "maintainer_email": "afumateanug@who.int",
             "month": "2023-01",
             "groups": [
                 {
@@ -1384,55 +1384,6 @@
             ],
             "year": "2023",
             "resources": [
-                {
-                    "name": "Report from Family Doctor BETCU for week number 5",
-                    "filename": "report.xlsx",
-                    "format": "XLSX",
-                    "week": "23-02-03",
-                    "family_doctor": "BETCU"
-                },
-                {
-                    "name": "Report from Family Doctor CAMENCEAN for week number 5",
-                    "filename": "report.xlsx",
-                    "format": "XLSX",
-                    "week": "23-02-03",
-                    "family_doctor": "CAMENCEAN"
-                },
-                {
-                    "name": "Report from Family Doctor CRISTIAN for week number 5",
-                    "filename": "report.xlsx",
-                    "format": "XLSX",
-                    "week": "23-02-03",
-                    "family_doctor": "CRISTIAN"
-                },
-                {
-                    "name": "Report from Family Doctor DUMITRESCU for week number 5",
-                    "filename": "report.xlsx",
-                    "format": "XLSX",
-                    "week": "23-02-03",
-                    "family_doctor": "DUMITRESCU"
-                },
-                {
-                    "name": "Report from Family Doctor LACATUS for week number 5",
-                    "filename": "report.xlsx",
-                    "format": "XLSX",
-                    "week": "23-02-03",
-                    "family_doctor": "LACATUS"
-                },
-                {
-                    "name": "Report from Family Doctor NECULAU for week number 5",
-                    "filename": "report.xlsx",
-                    "format": "XLSX",
-                    "week": "23-02-03",
-                    "family_doctor": "NECULAU"
-                },
-                {
-                    "name": "Report from Family Doctor SERBAN for week number 5",
-                    "filename": "report.xlsx",
-                    "format": "XLSX",
-                    "week": "23-02-03",
-                    "family_doctor": "SERBAN"
-                },
                 {
                     "name": "Report from Family Doctor BETCU for week number 3",
                     "filename": "report.xlsx",
@@ -1578,6 +1529,55 @@
                     "filename": "report.xlsx",
                     "format": "XLSX",
                     "week": "23-01-06",
+                    "family_doctor": "SERBAN"
+                },
+                {
+                    "name": "Report from Family Doctor BETCU for week number 5",
+                    "filename": "report.xlsx",
+                    "format": "XLSX",
+                    "week": "23-02-03",
+                    "family_doctor": "BETCU"
+                },
+                {
+                    "name": "Report from Family Doctor CAMENCEAN for week number 5",
+                    "filename": "report.xlsx",
+                    "format": "XLSX",
+                    "week": "23-02-03",
+                    "family_doctor": "CAMENCEAN"
+                },
+                {
+                    "name": "Report from Family Doctor CRISTIAN for week number 5",
+                    "filename": "report.xlsx",
+                    "format": "XLSX",
+                    "week": "23-02-03",
+                    "family_doctor": "CRISTIAN"
+                },
+                {
+                    "name": "Report from Family Doctor DUMITRESCU for week number 5",
+                    "filename": "report.xlsx",
+                    "format": "XLSX",
+                    "week": "23-02-03",
+                    "family_doctor": "DUMITRESCU"
+                },
+                {
+                    "name": "Report from Family Doctor LACATUS for week number 5",
+                    "filename": "report.xlsx",
+                    "format": "XLSX",
+                    "week": "23-02-03",
+                    "family_doctor": "LACATUS"
+                },
+                {
+                    "name": "Report from Family Doctor NECULAU for week number 5",
+                    "filename": "report.xlsx",
+                    "format": "XLSX",
+                    "week": "23-02-03",
+                    "family_doctor": "NECULAU"
+                },
+                {
+                    "name": "Report from Family Doctor SERBAN for week number 5",
+                    "filename": "report.xlsx",
+                    "format": "XLSX",
+                    "week": "23-02-03",
                     "family_doctor": "SERBAN"
                 },
                 {
