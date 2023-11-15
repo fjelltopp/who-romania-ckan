@@ -1,0 +1,12 @@
+{
+  "config": {
+	  "ckan_url": "https://wrc.fjelltopp.org",
+	  "ckan_api_key": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJhWXZHUlBYWWNRaGcyWVdwWEVxSDJjSWt0QUpsMUVsMnFzMFlpT1RzWlo0RFRzZ2hvNFF2S0t0YnVZN1RxT3d5Yy14NkxBX2QwcXFzWHhqaSIsImlhdCI6MTY5NjAxNzIyM30.1VKdMx3vyhBY7oyQxHPFjRYn40zlYCGSfv82GpMLKhA",
+	  "data_folder": "./data",
+	  "resources_folders": "./resources/family-medicine-reports",
+	  "datasets_file": "/resources/datasets.json",
+	  "template_file": "./resources/wrc-template-2.xlsx",
+	  "swap_report_dates_and_periods": false,
+	  "overwrite_logs": false
+  }
+}
