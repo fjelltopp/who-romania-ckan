@@ -1,9 +1,9 @@
-import csv
 import json
 import logging
 import os
 from tqdm import tqdm
-from datetime import datetime
+from datetime import datetime, timedelta
+import shutil
 
 import ckanapi
 from openpyxl.reader.excel import load_workbook
@@ -120,29 +120,49 @@ def read_resource_sheet(filename, workbook, sheet):
     new_folder_path = os.path.join(root_dir, "resources/family-medicine-reports", month, week, sheet)
 
     # Loading the template file
-    template_workbook = load_workbook(os.path.join(root_dir, CONFIG['template_file']))
+    template_path = os.path.join(root_dir, CONFIG['template_file'])
+    template_workbook = load_workbook(template_path)
     template_sheet = template_workbook.active
 
     start_row, end_row = 3, 35
     start_col, end_col = 4, 23  # A to W
 
-    template_sheet.protection.disable()
-
+    sheet_contains_data = False
     for row in range(start_row, end_row + 1):
         for col in range(start_col, end_col + 1):
             cell_value = active.cell(row=row+5, column=col).value
+            if cell_value is not None:
+                sheet_contains_data = True
             template_sheet.cell(row=row, column=col, value=cell_value)
 
     if not os.path.exists(new_folder_path):
         os.makedirs(new_folder_path)
 
-    template_workbook.save(new_folder_path + '/report.xlsx')
+    save_path = new_folder_path + '/report.xlsx'
+
+    if sheet_contains_data:
+        template_workbook.save(save_path)
+    else:
+        # Copy instead, because using pyexcel corrupts pandas reading
+        shutil.copy2(template_path, new_folder_path)
+        base_name = os.path.basename(template_path)
+        copied_filename = os.path.join(new_folder_path, base_name)
+        os.rename(copied_filename, save_path)
 
     return mutable_resource_dict("Report from Family Doctor " + fd_name + " for week number " + week_number,
                                  'report.xlsx',
                                  week,
                                  fd_name)
 
+def get_dates_of_weekday_in_month(month, weekday=4, format="%d %b %Y"):
+    month_start = datetime.strptime(month, "%Y-%m")
+    date = month_start + timedelta((weekday-month_start.weekday())%7)
+    week = timedelta(weeks=1)
+    dates = []
+    while date.month == month_start.month:
+        dates.append(date.strftime(format))
+        date = date + week
+    return dates
 
 def load_file_sheets(file):
     log.info("Reading file: ", file)
@@ -160,7 +180,6 @@ def generate_dataset_dict():
         "datasets": []
     }
     fd_files = traverse_folder_tree()
-
     for file_dict in tqdm(fd_files):
         resources = []
         for file in file_dict["files"]:
