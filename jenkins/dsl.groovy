@@ -88,6 +88,12 @@ pipelineJob("WHORomaniaCkan-deploy") {
             credentials('jenkins_github_ssh')
             name('origin')
           }
+          extensions {
+            submoduleOptions {
+              recursive(true)
+              parentCredentials(true)
+            }
+          }
           scriptPath('jenkinsfiles/wrc_deploy.groovy')
           branch("remotes/origin/master")
         }
@@ -95,4 +101,3 @@ pipelineJob("WHORomaniaCkan-deploy") {
     }
   }
 }
-
