@@ -2,6 +2,7 @@ import json
 import logging
 import os
 import ckanapi
+import time
 
 
 CONFIG_FILENAME = os.getenv('CONFIG_FILENAME', 'config.json')
@@ -21,6 +22,120 @@ log = logging.getLogger(__name__)
 log.setLevel(logging.INFO)
 
 
+def keep_trying(f):
+    """
+    Retry an api call if it fails the first time.
+    CKAN often throws internal errors when bombarded with too many requests.
+    """
+    def wrapper_function(*args):
+        counter = 0
+        while True:
+            try:
+                result = f(*args)
+            except ckanapi.errors.ValidationError as e:
+                raise e  # Catch all CKANAPIErrors that are not ValidationErrors
+            except ckanapi.errors.CKANAPIError as e:
+                if counter > 4:
+                    raise e  # Raise error after 5 failed attempts
+                log.error(f"CKAN API Error: {args[1]['name']}: {e}")
+                log.error("Giving CKAN 5s to fix itself before trying again")
+                time.sleep(5)
+                counter = counter + 1
+            else:
+                break
+        return result
+    return wrapper_function
+
+
+@keep_trying
+def create_user(ckan, user):
+    try:
+        user = ckan.action.user_create(**user)
+        log.info(f"Created user {user['name']}")
+    except ckanapi.errors.ValidationError:
+        log.warning(f"User {user['name']} might exist. Will try to update.")
+        user = update_user(ckan, user)
+    return user
+
+
+@keep_trying
+def update_user(ckan, user):
+    user_id = ckan.action.user_show(id=user['name'])['id']
+    user = ckan.action.user_update(id=user_id, **user)
+    log.info(f"Updated user {user['name']}")
+    return user
+
+
+@keep_trying
+def create_organization(ckan, organization):
+    try:
+        organization = ckan.action.organization_create(**organization)
+        log.info(f"Created organization {organization['name']}")
+    except ckanapi.errors.ValidationError:
+        log.warning(f"Organization {organization['name']} might exist. Will try to update.")
+        organization = update_organization(ckan, organization)
+    return organization
+
+
+@keep_trying
+def update_organization(ckan, organization):
+    org_id = ckan.action.organization_show(id=organization['name'])['id']
+    organization = ckan.action.organization_update(id=org_id, **organization)
+    log.info(f"Updated organization {organization['name']}")
+    return organization
+
+
+@keep_trying
+def create_dataset(ckan, dataset):
+    try:
+        dataset = ckan.action.package_create(**dataset)
+        log.info(f"Created dataset {dataset['name']}")
+    except ckanapi.errors.ValidationError:
+        log.warning(f"Dataset {dataset['name']} might exist. Will try to update.")
+        dataset = update_dataset(ckan, dataset)
+    return dataset
+
+
+@keep_trying
+def update_dataset(ckan, dataset):
+    dataset_id = ckan.action.package_show(id=dataset['name'])['id']
+    dataset = ckan.action.package_update(id=dataset_id, **dataset)
+    log.info(f"Updated dataset {dataset['name']}")
+    return dataset
+
+
+@keep_trying
+def create_resource(ckan, resource):
+    file_path = os.path.join(RESOURCE_FOLDER, resource['filename'])
+    with open(file_path, 'rb') as res_file:
+        resource = ckan.call_action(
+            'resource_create',
+            resource,
+            files={'upload': res_file}
+        )
+    log.info(f"Created resource {resource['name']}")
+    return resource
+
+
+@keep_trying
+def create_group(ckan, group):
+    try:
+        group = ckan.action.group_create(**group)
+        log.info(f"Created group {group['name']}")
+    except ckanapi.errors.ValidationError:
+        log.warning(f"Group {group['name']} might exist. Will try to update.")
+        group = update_group(ckan, group)
+    return group
+
+
+@keep_trying
+def update_group(ckan, group):
+    group_id = ckan.action.group_show(id=group['name'])['id']
+    group = ckan.action.group_update(id=group_id, **group)
+    log.info(f"Updated group {group['name']}")
+    return group
+
+
 def load_users(ckan):
     """
     Helper method to load users from USERS_FILE config json file
@@ -31,16 +146,7 @@ def load_users(ckan):
         users = json.load(users_file)['users']
         for user in users:
             try:
-                ckan.action.user_create(**user)
-                log.info(f"Created user {user['name']}")
-                continue
-            except ckanapi.errors.ValidationError:
-                pass  # fallback to user update
-            try:
-                log.warning(f"User {user['name']} might exist. Will try to update.")
-                id = ckan.action.user_show(id=user['name'])['id']
-                ckan.action.user_update(id=id, **user)
-                log.info(f"Updated user {user['name']}")
+                create_user(ckan, user)
             except ckanapi.errors.ValidationError as e:
                 log.error(f"Can't create user {user['name']}: {e.error_dict}")
 
@@ -51,27 +157,13 @@ def load_organizations(ckan):
     :param ckan: ckanapi instance
     :return: a dictionary map of created organization names to their ids
     """
-    organization_ids_dict = {}
     with open(ORGANIZATIONS_FILE, 'r') as organizations_file:
         organizations = json.load(organizations_file)['organizations']
         for organization in organizations:
-            org_name = organization['name']
             try:
-                org = ckan.action.organization_create(**organization)
-                log.info(f"Created organization {org_name}")
-                organization_ids_dict[org_name] = org["id"]
-                continue
-            except ckanapi.errors.ValidationError:
-                pass  # fallback to organization update
-            try:
-                log.warning(f"Organization {org_name} might exist. Will try to update.")
-                org_id = ckan.action.organization_show(id=org_name)['id']
-                ckan.action.organization_update(id=org_id, **organization)
-                organization_ids_dict[org_name] = org_id
-                log.info(f"Updated organization {org_name}")
+                organization = create_organization(ckan, organization)
             except ckanapi.errors.ValidationError as e:
-                log.error(f"Can't create organization {org_name}: {e.error_dict}")
-    return organization_ids_dict
+                log.error(f"Can't create organization {organization['name']}: {e.error_dict}")
 
 
 def load_datasets(ckan):
@@ -86,30 +178,17 @@ def load_datasets(ckan):
             resources = dataset.pop('resources', [])
             dataset['resources'] = []
             try:
-                dataset = ckan.action.package_create(**dataset)
-                log.info(f"Created dataset {dataset['name']}")
-            except ckanapi.errors.ValidationError:
-                try:
-                    log.warning(f"Dataset {dataset['name']} might exist. Will try to update.")
-                    id = ckan.action.package_show(id=dataset['name'])['id']
-                    dataset = ckan.action.package_update(id=id, **dataset)
-                    log.info(f"Updated dataset {dataset['name']}")
-                except ckanapi.errors.ValidationError as e:
-                    log.error(f"Can't create dataset {dataset['name']}: {e.error_dict}")
-                    continue
+                dataset = create_dataset(ckan, dataset)
+            except ckanapi.errors.ValidationError as e:
+                log.error(f"Can't create dataset {dataset['name']}: {e.error_dict}")
+                continue
             for resource in resources:
-                file_path = os.path.join(RESOURCE_FOLDER, resource['filename'])
                 resource['package_id'] = dataset['id']
                 try:
-                    with open(file_path, 'rb') as res_file:
-                        resource = ckan.call_action(
-                            'resource_create',
-                            resource,
-                            files={'upload': res_file}
-                        )
-                    log.info(f"Created resource {resource['name']}")
+                    create_resource(ckan, resource)
                 except ckanapi.errors.ValidationError as e:
                     log.error(f"Can't create resource {resource['name']}: {e.error_dict}")
+                    break
 
 
 def load_groups(ckan):
@@ -118,30 +197,13 @@ def load_groups(ckan):
     :param ckan: ckanapi instance
     :return: None
     """
-    group_ids_dict = {}
-
     with open(GROUPS_FILE, 'r') as groups_file:
         groups = json.load(groups_file)['groups']
-
         for group in groups:
-            group_name = group['name']
             try:
-                org = ckan.action.group_create(**group)
-                log.info(f"Created group {group_name}")
-                group_ids_dict[group_name] = org["id"]
-                continue
-            except ckanapi.errors.ValidationError:
-                pass  # fallback to group update
-            try:
-                log.warning(f"Group {group_name} might exist. Will try to update.")
-                group_id = ckan.action.group_show(id=group_name)['id']
-                ckan.action.group_update(id=group_id, **group)
-                group_ids_dict[group_name] = group_id
-                log.info(f"Updated group {group_name}")
+                group = create_group(ckan, group)
             except ckanapi.errors.ValidationError as e:
-                log.error(f"Can't create group {group_name}: {e.error_dict}")
-
-    return group_ids_dict
+                log.error(f"Can't create group {group['name']}: {e.error_dict}")
 
 
 def load_data(ckan_url, ckan_api_key):
@@ -158,4 +220,3 @@ if __name__ == '__main__':
         load_data(ckan_url=CONFIG['ckan_url'], ckan_api_key=CONFIG['ckan_api_key'])
     except AssertionError:
         log.error('CKAN api key missing from config.json')
-
